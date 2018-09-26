@@ -3,14 +3,20 @@ import java.util.ArrayList;
 
 public class Joueur {
     public Joueur(ArrayList<Carte> paquet){
-        carte = paquet.get(0);
-        paquet.remove(0);
+        for (int i = 0; i != 5; ++i){
+            main.add(paquet.get(0));
+            paquet.remove(0);
+        }
     }
     public int plus_haute_carte() {
-        return carte.nombre;
+        int max = 0;
+        for (Carte x:main)
+            if (x.nombre > max)
+                max = x.nombre;
+        return max;
     }
-    public Carte getMain(){
-        return carte;
+    public ArrayList<Carte> getMain(){
+        return main;
     }
-    private Carte carte;
+    private ArrayList<Carte> main = new ArrayList<>();
 }

@@ -1,5 +1,6 @@
 package Poker2;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,22 +15,40 @@ public class JoueurTest {
             liste_carte.add(new Carte(liste_nbr.get(i), liste_col.get(i)));
         return new Joueur(liste_carte);
     }
-    private ArrayList<Integer> liste_nbr_j1 = new ArrayList<>(Arrays.asList(2, 9, 4, 5, 6));
-    private ArrayList<String> liste_col_j1 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Pi", "Pi"));
-    private Joueur joueur1 = creer_joueur(liste_nbr_j1, liste_col_j1);
 
-    private ArrayList<Integer> liste_nbr_j2 = new ArrayList<>(Arrays.asList(3, 3, 7, 8, 10));
-    private ArrayList<String> liste_col_j2 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Pi", "Pi"));
-    private Joueur joueur2 = creer_joueur(liste_nbr_j2, liste_col_j2);
-
-    private ArrayList<Integer> liste_nbr_j3 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
-    private ArrayList<String> liste_col_j3 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
-    private Joueur joueur3 = creer_joueur(liste_nbr_j3, liste_col_j3);
+    private ArrayList<String> liste_col_j1;
+    private Joueur joueur1;
+    private ArrayList<Integer> liste_nbr_j2;
+    private ArrayList<String> liste_col_j2;
+    private Joueur joueur2;
+    private ArrayList<Integer> liste_nbr_j3;
+    private ArrayList<String> liste_col_j3;
+    private Joueur joueur3;
+    private ArrayList<Integer> liste_nbr_j4;
+    private ArrayList<String> liste_col_j4;
+    private Joueur joueur4;
+    @Before
+    public void initialize() {
+        ArrayList<Integer> liste_nbr_j1 = new ArrayList<>(Arrays.asList(2, 9, 4, 5, 6));
+        liste_col_j1 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Pi", "Pi"));
+        joueur1 = creer_joueur(liste_nbr_j1, liste_col_j1);
+        liste_nbr_j2 = new ArrayList<>(Arrays.asList(3, 3, 7, 8, 10));
+        liste_col_j2 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Pi", "Pi"));
+        joueur2 = creer_joueur(liste_nbr_j2, liste_col_j2);
+        liste_nbr_j3 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
+        liste_col_j3 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
+        joueur3 = creer_joueur(liste_nbr_j3, liste_col_j3);
+        liste_nbr_j4 = new ArrayList<>(Arrays.asList(13, 8, 8, 7, 6));
+        liste_col_j4 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
+        joueur4 = creer_joueur(liste_nbr_j4, liste_col_j4);
+    }
 
     @Test
     public void valeur_main() {
         ValeurMain v1 = new ValeurMain(1, 9, 6, 5, 4, 2);
         //TODO
+        ValeurMain vtest1 = new ValeurMain(2, 8, 13, 7, 6, 0);
+        assertEquals(vtest1.meilleur_que(joueur4.valeur_main()), 0);
     }
 
     @Test

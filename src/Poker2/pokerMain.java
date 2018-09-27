@@ -21,8 +21,12 @@ public class pokerMain {
         System.out.println();
 
         //On montre qui a gagné
-        Carte carte_gagnante = new Carte(Math.max(joueur1.plus_haute_carte(), joueur2.plus_haute_carte()), "Pi");
-        System.out.print("Le joueur "+(joueur1.plus_haute_carte()>joueur2.plus_haute_carte()?"1":"2")+" gagne avec carte la plus élevée : ");
-        System.out.println(carte_gagnante.valeur_to_indiceComplet());
+        ValeurMain j1 = joueur1.valeur_main();
+        ValeurMain j2 = joueur2.valeur_main();
+        String gagnant = "La main ";
+        if (j1.meilleur_que(j2) == 1) gagnant+=("1 gagne avec "+j1.combinaison()+(new Carte(j1.getValeurMain().get(1),"").valeur_to_indiceComplet()));
+        else if (j1.meilleur_que(j2) == -1) gagnant+=("2 gagne avec "+j2.combinaison()+(new Carte(j2.getValeurMain().get(1),"").valeur_to_indiceComplet()));
+        else gagnant = "Egalite";
+        System.out.println(gagnant);
    }
 }

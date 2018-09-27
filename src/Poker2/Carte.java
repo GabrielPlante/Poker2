@@ -30,6 +30,23 @@ public class Carte {
             default: return "C'est pas bon";
         }
     }
+
+
+    public int compareTo(Carte compareCard) {
+        int compareNumber=((Carte)compareCard).nombre;
+        /* For Ascending order*/
+        //return this.studentage-compareage;
+        return nombre - compareNumber;
+
+        /* For Descending order do like this */
+        //return compareage-this.studentage;
+    }
+
+    @Override
+    public String toString() {
+        return nombre + couleur;
+    }
+
     public int nombre;
     public String couleur;
 }

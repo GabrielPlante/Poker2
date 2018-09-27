@@ -27,6 +27,10 @@ public class Enregistreur {
             paquet.add(new Carte(nombre, "Pi"));
         }
     }
+    public Enregistreur(ArrayList<Carte> paquet_brut)//Pour les tests uniquements
+    {
+        paquet = paquet_brut;
+    }
     public int convertisseur_indice(String indice){
         int nombre = 0;
         switch (indice) {

@@ -4,22 +4,15 @@ import java.util.ArrayList;
 
 public class ValeurMain {
     public ValeurMain(int val_princ, int val_sec, int val3, int val4, int val5, int val6){
-        valeur_principale = val_princ;
-        valeur_secondaire = val_sec;
-        valeur3 = val3;
-        valeur4 = val4;
-        valeur5 = val5;
-        valeur6 = val6;
+        valeur.add(val_princ);
+        valeur.add(val_sec);
+        valeur.add(val3);
+        valeur.add(val4);
+        valeur.add(val5);
+        valeur.add(val6);
     }
     public ArrayList<Integer> getValeurMain(){
-        ArrayList<Integer> liste = new ArrayList<>();
-        liste.add(valeur_principale);
-        liste.add(valeur_secondaire);
-        liste.add(valeur3);
-        liste.add(valeur4);
-        liste.add(valeur5);
-        liste.add(valeur6);
-        return liste;
+        return valeur;
     }
     public int meilleur_que(ValeurMain autreMain){
         for (int i = 0; i!=6; ++i){
@@ -31,7 +24,7 @@ public class ValeurMain {
         return 0;
     }
     public String combinaison(){
-        switch (valeur_principale)
+        switch (valeur.get(0))
         {
             case 1: return "carte la plus élevée : ";
             case 2: return "paire de ";
@@ -45,10 +38,5 @@ public class ValeurMain {
             default: return "C'est pas bon";
         }
     }
-    private int valeur_principale;
-    private int valeur_secondaire;
-    private int valeur3;
-    private int valeur4;
-    private int valeur5;
-    private int valeur6;
+    private ArrayList<Integer> valeur = new ArrayList<>();
 }

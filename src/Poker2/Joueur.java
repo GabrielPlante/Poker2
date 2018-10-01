@@ -8,34 +8,14 @@ public class Joueur {
             paquet.remove(0);
         }
     }
-    public void setKicker(ArrayList<Carte> kicker)
-    {
-        this.kicker = kicker;
-    }
-    public void trouveKicker()
-    {
-        if (paire() != 0)
-        {
-            for (Carte x:main)
-            {
-                if (paire() != x.nombre)
-                    kicker.add(x);
-            }
-        }
-        else
-        {
-            for (Carte x:main)
-            {
-                kicker.add(x);
-            }
-        }
-    }
+
     public ValeurMain valeur_main(){
-        trouveKicker();
+        ArrayList<Integer> x = new ArrayList<>();
         if (paire() != 0){
-            return new ValeurMain(2, paire(), nieme_phc(1), nieme_phc(2), nieme_phc(3), 0);
+            x.add(paire());
+            return new ValeurMain(2, paire(), nieme_phc(1, x), nieme_phc(2,x), nieme_phc(3,x), 0);
         }
-        return new ValeurMain(1, nieme_phc(1), nieme_phc(2), nieme_phc(3), nieme_phc(4), nieme_phc(5));
+        return new ValeurMain(1, nieme_phc(1,x), nieme_phc(2,x), nieme_phc(3,x), nieme_phc(4,x), nieme_phc(5,x));
     }
     public int paire(){
         for (Carte y:main)
@@ -48,17 +28,22 @@ public class Joueur {
         }
         return 0;
     }
-    public int nieme_phc(int n){
-        if (n > 5 || n < 1)
+    public int nieme_phc(int n, ArrayList<Integer> nbr_a_enlever){
+        ArrayList<Integer> liste_temp = new ArrayList<>();//On crée une liste temporaire
+        for (Carte y:main){
+            boolean add = true;
+            for (Integer z:nbr_a_enlever)
+                if (z==y.nombre)
+                    add = false;
+            if (add) liste_temp.add(y.nombre);
+        }
+        if (n > liste_temp.size() || n < 1)//On regarde si n est valide
             return 0;
-        kicker.sort((o1, o2) -> o1.compareTo(o2));
-        int indice = kicker.size() - n;
-        Carte temp = kicker.get(indice);
-        return temp.nombre;
+        Collections.sort(liste_temp);//On trie la liste
+        return liste_temp.get(liste_temp.size()-n);
     }
     public ArrayList<Carte> getMain(){
         return main;
     }
     private ArrayList<Carte> main = new ArrayList<>();
-    private ArrayList<Carte> kicker = new ArrayList<>();
 }

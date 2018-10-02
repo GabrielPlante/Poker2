@@ -1,4 +1,4 @@
-package Poker2;
+package src.Poker2;
 import java.util.*;
 
 public class Joueur {
@@ -11,6 +11,10 @@ public class Joueur {
 
     public ValeurMain valeur_main(){
         ArrayList<Integer> x = new ArrayList<>();
+        if (this.double_paire() != 0) {
+            x.add(this.double_paire());
+            return new ValeurMain(3, this.double_paire(), this.nieme_phc(1, x), 0, 0, 0);
+        }
         if (paire() != 0){
             x.add(paire());
             return new ValeurMain(2, paire(), nieme_phc(1, x), nieme_phc(2,x), nieme_phc(3,x), 0);
@@ -27,6 +31,25 @@ public class Joueur {
             }
         }
         return 0;
+    }
+    private int double_paire()
+    {
+        int a = 0, max = 0;// a:nombre de pair, max la valeur de la plus grande paire
+        for (Carte y:main)
+        {
+            for (Carte x:main)
+            {
+                if (y.nombre == x.nombre && !y.couleur.equals(x.couleur))
+                {
+                    if (y.nombre >= max)
+                        max = y.nombre;
+                    ++a;
+                }
+            }
+        }
+        if (a == 4) //On teste chaque carte, donc s'il y a une paire, a == 2, si il y a 2 paire, a == 4
+            return max;
+        else return 0;//Sinon on revoit 0, qui sert de false
     }
     public int nieme_phc(int n, ArrayList<Integer> nbr_a_enlever){
         ArrayList<Integer> liste_temp = new ArrayList<>();//On crée une liste temporaire

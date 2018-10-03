@@ -10,7 +10,10 @@ public class Enregistreur {
         String ligne = entree.nextLine();
         String[] preCarte = ligne.split(" ");
         for (String x:preCarte){
-            int nombre = convertisseur_indice(Character.toString(x.charAt(0)));
+            String sNombre = Character.toString(x.charAt(0));
+            if (Character.toString(x.charAt(1)).equals("0")) sNombre = sNombre.concat("0");
+            x = x.replace("0","");
+            int nombre = convertisseur_indice(sNombre);
             if (nombre == 0) System.exit(0);
             String couleur = x.substring(1, 3);
             if (!bonne_couleur(couleur)) System.exit(0);

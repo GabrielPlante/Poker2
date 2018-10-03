@@ -1,4 +1,4 @@
-package src.Poker2;
+package Poker2;
 import java.util.*;
 
 public class Joueur {
@@ -34,7 +34,7 @@ public class Joueur {
     }
     private int double_paire()
     {
-        int a = 0, max = 0;// a:nombre de pair, max la valeur de la plus grande paire
+        int a = 0, max = 0;// a:nombre de paires, max la valeur de la plus grande paire
         for (Carte y:main)
         {
             for (Carte x:main)

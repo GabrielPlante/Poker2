@@ -66,7 +66,7 @@ public class Enregistreur {
         return false;
     }
     public boolean bonne_couleur(String couleur){
-        if (couleur.equals("Co") || couleur.equals("Pi"))
+        if (couleur.equals("Co") || couleur.equals("Pi") || couleur.equals("Ca") || couleur.equals("Tr"))
             return true;
         return false;
     }

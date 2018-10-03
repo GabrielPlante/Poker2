@@ -21,7 +21,7 @@ public class Enregistreur {
             //---Et puis on la rentre dans le paquet---
             Carte carte = new Carte(nombre, couleur);
             if (check_doublons(carte)){
-                System.out.println("Cette carte est déjà dans le paquet !");
+                System.out.println("Cette carte est déjà dans la main d'un joueur !");
                 continue;
             }
             paquet.add(carte);

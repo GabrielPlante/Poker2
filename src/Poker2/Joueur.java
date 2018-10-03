@@ -51,6 +51,23 @@ public class Joueur {
             return max;
         else return 0;//Sinon on revoit 0, qui sert de false
     }
+    private int brelan()
+    {
+        for (Carte x:main)
+        {
+            for (Carte y:main)
+            {
+                for (Carte z:main)
+                {
+                    if (x.nombre == y.nombre && y.nombre == z.nombre && x.couleur!=y.couleur && y.couleur!=z.couleur && x.couleur!=z.couleur)
+                    {
+                        return x.nombre;
+                    }
+                }
+            }
+        }
+    return 0;
+    }
     public int nieme_phc(int n, ArrayList<Integer> nbr_a_enlever){
         ArrayList<Integer> liste_temp = new ArrayList<>();//On crée une liste temporaire
         for (Carte y:main){

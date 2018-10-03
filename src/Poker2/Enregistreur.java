@@ -6,28 +6,20 @@ import java.util.Scanner;
 public class Enregistreur {
     public Enregistreur()
     {
-        System.out.println("Les cartes sont comprises entre 2 et 14. V, D, R, A sont acceptés");//Informations donnees a l'utilisateur
-        System.out.println("Entrer les cartes du joueur 1 :");
-        while (paquet.size() < 10)
-        {
-            if (paquet.size() == 5) System.out.println("Entrer les cartes du joueur 2 :");
-            System.out.println("Carte n° "+(paquet.size()+(paquet.size()<5?1:-4))+" : ");//On passe au carte du deuxieme
-            //---En premier l'indice de la carte---
-            int nombre = entrer_nombre();
-            if (nombre == 0) continue;
-            //---Ensuite la couleur de la carte---
-            String couleur = entrer_couleur();
-            if (couleur.isEmpty()) continue;
-            //---Et puis on la rentre dans le paquet---
-            Carte carte = new Carte(nombre, couleur);
-            if (check_doublons(carte)){
-                System.out.println("Cette carte est déjà dans la main d'un joueur !");
-                continue;
-            }
+        Scanner entree = new Scanner(System.in);
+        String ligne = entree.nextLine();
+        String[] preCarte = ligne.split(" ");
+        for (String x:preCarte){
+            int nombre = convertisseur_indice(Character.toString(x.charAt(0)));
+            if (nombre == 0) System.exit(0);
+            String couleur = x.substring(1, 3);
+            if (!bonne_couleur(couleur)) System.exit(0);
+            Poker2.Carte carte = new Poker2.Carte(nombre, couleur);
+            if (check_doublons(carte)) System.exit(0);
             paquet.add(carte);
         }
     }
-    public Enregistreur(ArrayList<Carte> paquet_brut)//Pour les tests uniquements
+    public Enregistreur(ArrayList<Poker2.Carte> paquet_brut)//Pour les tests uniquements
     {
         paquet = paquet_brut;
     }
@@ -73,27 +65,6 @@ public class Enregistreur {
 
     public ArrayList<Carte> getPaquet(){
         return paquet;
-    }
-    public int entrer_nombre(){
-        System.out.print("Nombre : ");
-        Scanner sc_nombre = new Scanner(System.in);
-        String indice = sc_nombre.nextLine();
-        int nombre = convertisseur_indice(indice);
-        if (nombre == 0){
-            System.out.println("Valeur d'indice incorrecte !");
-            return 0;
-        }
-        return nombre;
-    }
-    public String entrer_couleur(){
-        System.out.print("Couleur :");
-        Scanner sc_couleur = new Scanner(System.in);
-        String couleur = sc_couleur.nextLine();
-        if (!bonne_couleur(couleur)){
-            System.out.println("Cette couleur n'est pas valide !");
-            return "";
-        }
-        return couleur;
     }
 
     private ArrayList<Carte> paquet = new ArrayList<Carte>();

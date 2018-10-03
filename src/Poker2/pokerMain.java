@@ -6,19 +6,10 @@ import static java.lang.Math.max;
 
 public class pokerMain {
     public static void main(String[] args) {
-        Enregistreur paquet = new Enregistreur();//On demande les valeurs
-        Joueur joueur1 = new Joueur(paquet.getPaquet());//On crée les 2 joueurs avec les valeurs qu'on a
-        Joueur joueur2 = new Joueur(paquet.getPaquet());
-
-        //On affiche les mains des 2 joueurs
         System.out.print("Main 1 : ");
-        for (Carte x:joueur1.getMain())
-            System.out.print(x.valeur_to_indiceMin()+x.couleur+" ");
-        System.out.println();
+        Joueur joueur1 = new Joueur(new Poker2.Enregistreur().getPaquet());//On crée les 2 joueurs avec les valeurs qu'on a
         System.out.print("Main 2 : ");
-        for (Carte x:joueur2.getMain())
-            System.out.print(x.valeur_to_indiceMin()+x.couleur+" ");
-        System.out.println();
+        Joueur joueur2 = new Joueur(new Poker2.Enregistreur().getPaquet());
 
         //On montre qui a gagné
         ValeurMain j1 = joueur1.valeur_main();

@@ -14,12 +14,12 @@ public class Enregistreur {
             if (nombre == 0) System.exit(0);
             String couleur = x.substring(1, 3);
             if (!bonne_couleur(couleur)) System.exit(0);
-            Poker2.Carte carte = new Poker2.Carte(nombre, couleur);
+            Carte carte = new Carte(nombre, couleur);
             if (check_doublons(carte)) System.exit(0);
             paquet.add(carte);
         }
     }
-    public Enregistreur(ArrayList<Poker2.Carte> paquet_brut)//Pour les tests uniquements
+    public Enregistreur(ArrayList<Carte> paquet_brut)//Pour les tests uniquements
     {
         paquet = paquet_brut;
     }
@@ -53,7 +53,7 @@ public class Enregistreur {
 
     public boolean check_doublons(Carte carte){
         for (Carte x:paquet)
-            if (x.nombre == carte.nombre && x.couleur.equals(carte.couleur))
+            if (x.getNombre() == carte.getNombre() && x.getCouleur().equals(carte.getCouleur()))
                 return true;
         return false;
     }

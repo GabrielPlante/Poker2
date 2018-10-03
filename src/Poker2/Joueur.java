@@ -26,8 +26,8 @@ public class Joueur {
         {
             for (Carte x:main)
             {
-                if (y.nombre == x.nombre && !y.couleur.equals(x.couleur))//On regarde si c'est le meme nombre et pas la meme couleur
-                    return x.nombre;
+                if (y.getNombre() == x.getNombre() && !y.getCouleur().equals(x.getCouleur()))//On regarde si c'est le meme getNombre et pas la meme getCouleur
+                    return x.getNombre();
             }
         }
         return 0;
@@ -39,10 +39,10 @@ public class Joueur {
         {
             for (Carte x:main)
             {
-                if (y.nombre == x.nombre && !y.couleur.equals(x.couleur))
+                if (y.getNombre() == x.getNombre() && !y.getCouleur().equals(x.getCouleur()))
                 {
-                    if (y.nombre >= max)
-                        max = y.nombre;
+                    if (y.getNombre() >= max)
+                        max = y.getNombre();
                     ++a;
                 }
             }
@@ -59,9 +59,9 @@ public class Joueur {
             {
                 for (Carte z:main)
                 {
-                    if (x.nombre == y.nombre && y.nombre == z.nombre && x.couleur!=y.couleur && y.couleur!=z.couleur && x.couleur!=z.couleur)
+                    if (x.getNombre() == y.getNombre() && y.getNombre() == z.getNombre() && x.getCouleur()!=y.getCouleur() && y.getCouleur()!=z.getCouleur() && x.getCouleur()!=z.getCouleur())
                     {
-                        return x.nombre;
+                        return x.getNombre();
                     }
                 }
             }
@@ -73,9 +73,9 @@ public class Joueur {
         for (Carte y:main){
             boolean add = true;
             for (Integer z:nbr_a_enlever)
-                if (z==y.nombre)
+                if (z==y.getNombre())
                     add = false;
-            if (add) liste_temp.add(y.nombre);
+            if (add) liste_temp.add(y.getNombre());
         }
         if (n > liste_temp.size() || n < 1)//On regarde si n est valide
             return 0;

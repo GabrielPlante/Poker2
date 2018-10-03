@@ -7,9 +7,9 @@ import static java.lang.Math.max;
 public class pokerMain {
     public static void main(String[] args) {
         System.out.print("Main 1 : ");
-        Joueur joueur1 = new Joueur(new Poker2.Enregistreur().getPaquet());//On crée les 2 joueurs avec les valeurs qu'on a
+        Joueur joueur1 = new Joueur(new Enregistreur().getPaquet());//On crée les 2 joueurs avec les valeurs qu'on a
         System.out.print("Main 2 : ");
-        Joueur joueur2 = new Joueur(new Poker2.Enregistreur().getPaquet());
+        Joueur joueur2 = new Joueur(new Enregistreur().getPaquet());
 
         //On montre qui a gagné
         ValeurMain j1 = joueur1.valeur_main();

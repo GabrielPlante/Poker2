@@ -47,6 +47,14 @@ public class Carte {
         return nombre + couleur;
     }
 
-    public int nombre;
-    public String couleur;
+    public int getNombre() {
+        return nombre;
+    }
+
+    public String getCouleur() {
+        return couleur;
+    }
+
+    private int nombre;
+    private String couleur;
 }

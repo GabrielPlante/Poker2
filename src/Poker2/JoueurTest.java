@@ -31,6 +31,9 @@ public class JoueurTest {
     private ArrayList<Integer> liste_nbr_j5;
     private ArrayList<String> liste_col_j5;
     private Joueur joueur5;
+    private ArrayList<Integer> liste_nbr_jx;
+    private ArrayList<String> liste_col_jx;
+    private Joueur joueurx;
     @Before
     public void initialize() {
         ArrayList<Integer> liste_nbr_j1 = new ArrayList<>(Arrays.asList(2, 9, 4, 5, 6));
@@ -48,6 +51,9 @@ public class JoueurTest {
         liste_nbr_j5 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
         liste_col_j5 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
         joueur5 = creer_joueur(liste_nbr_j5, liste_col_j5);
+        liste_nbr_jx = new ArrayList<>(Arrays.asList(3, 3, 8, 8, 11));
+        liste_col_jx = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
+        joueurx = creer_joueur(liste_nbr_jx, liste_col_jx);
     }
 
     @Test
@@ -75,6 +81,9 @@ public class JoueurTest {
         ArrayList<Integer> a1 = new ArrayList<>();
         a1.add(3);
         ArrayList<Integer> a2 = new ArrayList<>();
+        ArrayList<Integer> a3 = new ArrayList<>();
+        a3.add(8);
+        assertEquals(joueurx.nieme_phc(1, a1), 11);
         assertEquals(joueur2.nieme_phc(1,a1),10);
         assertEquals(joueur2.nieme_phc(5,a1),0);
         assertEquals(joueur2.nieme_phc(4,a1),0);

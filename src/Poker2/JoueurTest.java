@@ -25,6 +25,12 @@ public class JoueurTest {
     private ArrayList<Integer> liste_nbr_j3;
     private ArrayList<String> liste_col_j3;
     private Joueur joueur3;
+    private ArrayList<Integer> liste_nbr_j4;
+    private ArrayList<String> liste_col_j4;
+    private Joueur joueur4;
+    private ArrayList<Integer> liste_nbr_j5;
+    private ArrayList<String> liste_col_j5;
+    private Joueur joueur5;
     @Before
     public void initialize() {
         ArrayList<Integer> liste_nbr_j1 = new ArrayList<>(Arrays.asList(2, 9, 4, 5, 6));
@@ -36,6 +42,12 @@ public class JoueurTest {
         liste_nbr_j3 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
         liste_col_j3 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
         joueur3 = creer_joueur(liste_nbr_j3, liste_col_j3);
+        liste_nbr_j4 = new ArrayList<>(Arrays.asList(13, 13, 4, 4, 12));
+        liste_col_j4 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
+        joueur4 = creer_joueur(liste_nbr_j4, liste_col_j4);
+        liste_nbr_j5 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
+        liste_col_j5 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
+        joueur5 = creer_joueur(liste_nbr_j5, liste_col_j5);
     }
 
     @Test
@@ -49,6 +61,13 @@ public class JoueurTest {
         assertEquals(joueur1.paire(), 0);
         assertEquals(joueur2.paire(), 3);
         assertEquals(joueur3.paire(), 13);
+    }
+
+    @Test
+    public void double_paire() {
+        assertEquals(joueur4.double_paire(), 13);
+        assertEquals(joueur5.double_paire(), 0);
+
     }
 
     @Test

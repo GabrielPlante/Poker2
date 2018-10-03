@@ -32,7 +32,7 @@ public class Joueur {
         }
         return 0;
     }
-    private int double_paire()
+    public int double_paire()
     {
         int a = 0, max = 0;// a:nombre de paires, max la valeur de la plus grande paire
         for (Carte y:main)

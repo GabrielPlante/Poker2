@@ -22,21 +22,21 @@ public class Joueur {
     }
     public int double_paire()
     {
-        int a = 0, max = 0;// a:nombre de paires, max la valeur de la plus grande paire
+        int nombreDePaireFoisDeux = 0, paireMax = 0;// a:nombre de paires, max la valeur de la plus grande paire
         for (Carte y:main)
         {
             for (Carte x:main)
             {
                 if (y.getNombre() == x.getNombre() && !y.getCouleur().equals(x.getCouleur()))
                 {
-                    if (y.getNombre() >= max)
-                        max = y.getNombre();
-                    ++a;
+                    if (y.getNombre() >= paireMax)
+                        paireMax = y.getNombre();
+                    ++nombreDePaireFoisDeux;
                 }
             }
         }
-        if (a == 4) //On teste chaque carte, donc s'il y a une paire, a == 2, si il y a 2 paire, a == 4
-            return max;
+        if (nombreDePaireFoisDeux == 4) //On teste chaque carte, donc s'il y a une paire, a == 2, si il y a 2 paire, a == 4
+            return paireMax;
         else return 0;//Sinon on revoit 0, qui sert de false
     }
     public int brelan()//Systeme different que paire, on s'assure que chaque carte (i, j, et k) soient differentes

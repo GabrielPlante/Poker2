@@ -10,7 +10,6 @@ public class ValeurMain {
             x.add(joueur.brelan());
             valeur.add(4);
             valeur.add(joueur.brelan());
-            valeur.add(joueur.nieme_phc(2,x));
         }
         if (joueur.double_paire() != 0){
             x.add(joueur.double_paire());
@@ -34,7 +33,7 @@ public class ValeurMain {
             valeur.add(joueur.nieme_phc(4,x));
             valeur.add(joueur.nieme_phc(5,x));
         }
-        for (int i = valeur.size(); i < 6; ++i)
+        while(valeur.size() < 6)
             valeur.add(0);
     }
     public ArrayList<Integer> getValeurMain(){
@@ -61,7 +60,7 @@ public class ValeurMain {
             case 7: return "full aux ";
             case 8: return "carré de ";
             case 9: return "quinte flush hauteur ";
-            default: return "C'est pas bon";
+            default: return "Erreur";
         }
     }
     private ArrayList<Integer> valeur = new ArrayList<>();

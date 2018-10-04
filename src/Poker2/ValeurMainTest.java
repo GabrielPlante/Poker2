@@ -256,7 +256,17 @@ public class ValeurMainTest {
         assertEquals(vmJ12.meilleureQue(vmJ18), -1); //carre
         assertEquals(vmJ12.meilleureQue(vmJ21), -1); //quinte flush
 
-        //vmJ15
+        //vmJ15 <
+        assertEquals(vmJ15.meilleureQue(vmJ15), 0); //full
+        assertEquals(vmJ15.meilleureQue(vmJ18), -1); //carre
+        assertEquals(vmJ15.meilleureQue(vmJ21), -1); //quinte flush
+
+        //vmJ18 <
+        assertEquals(vmJ18.meilleureQue(vmJ18), 0); //carre
+        assertEquals(vmJ18.meilleureQue(vmJ21), -1); //quinte flush
+
+        //vmJ21 <=
+        assertEquals(vmJ21.meilleureQue(vmJ21), 0);
 
         /*ValeurMain main1 = new ValeurMain(2, 2, 2, 2, 2, 2);
         ValeurMain main2 = new ValeurMain(2, 2, 2, 2, 2, 1);

@@ -3,6 +3,7 @@ package Poker2;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -42,7 +43,8 @@ public class ValeurMainTest {
     private ArrayList<String> liste_col_j8;
     private Joueur joueur8;
 
-    private List<Integer> l4;
+    private List<Integer> list1, list2, list3, list4,
+        list5, list6, list7, list8;
 
     @Before
     public void initialize() {
@@ -97,7 +99,21 @@ public class ValeurMainTest {
 
     @Test
     public void valeurMain(){
-        assertEquals(valeurMain(joueur1), );
+        ValeurMain vmJ1 = new ValeurMain(joueur1);
+        ValeurMain vmJ2 = new ValeurMain(joueur2);
+        ValeurMain vmJ4 = new ValeurMain(joueur4);
+
+        ValeurMain vmJ6 = new ValeurMain(joueur6);
+
+        list1 = new ArrayList<Integer>(Arrays.asList(1, 9, 6, 5, 4, 2));
+        assertEquals(vmJ1.getValeurMain(), list1);
+        list2 = new ArrayList<Integer>(Arrays.asList(2, 3, 10, 8, 7, 0));
+        assertEquals(vmJ2.getValeurMain(), list2);
+        list4 = new ArrayList<Integer>(Arrays.asList(3, 13, 4, 12, 0, 0));
+        assertEquals(vmJ4.getValeurMain(), list4);
+
+        list6 = new ArrayList<Integer>(Arrays.asList(4, 13, 0, 0, 0, 0));
+        assertEquals(vmJ6.getValeurMain(), list6);
     }
 }
 

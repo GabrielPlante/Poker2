@@ -9,16 +9,15 @@ public class ValeurMain {
             x.add(joueur.brelan());
             valeur.add(4);
             valeur.add(joueur.brelan());
-        }
-        if (joueur.doublePaire().size() == 2){
+        } else if (joueur.doublePaire().size() == 2){
             x.add(joueur.doublePaire().get(0));
             x.add(joueur.doublePaire().get(1));
             valeur.add(3);
             valeur.add(joueur.doublePaire().get(0));
             valeur.add(joueur.doublePaire().get(1));
             valeur.add(joueur.niemePhc(1,x));
-        }
-        if (joueur.paire() != 0){
+
+        } else if (joueur.paire() != 0){
             x.add(joueur.paire());
             valeur.add(2);
             valeur.add(joueur.paire());

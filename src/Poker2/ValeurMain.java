@@ -26,15 +26,15 @@ public class ValeurMain {
     public String combinaison(){
         switch (valeur.get(0))
         {
-            case 1: return "carte la plus élevée : ";
+            case 1: return "carte haute : ";
             case 2: return "paire de ";
             case 3: return "double paire de ";
             case 4: return "brelan de ";
-            case 5: return "suite de ";
+            case 5: return "suite hauteur ";
             case 6: return "couleur de ";
-            case 7: return "full de ";
-            case 8: return "carre de ";
-            case 9: return "quinte flush de ";
+            case 7: return "full aux ";
+            case 8: return "carré de ";
+            case 9: return "quinte flush hauteur ";
             default: return "C'est pas bon";
         }
     }

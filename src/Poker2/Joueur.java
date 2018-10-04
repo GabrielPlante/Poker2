@@ -19,7 +19,7 @@ public class Joueur {
             x.add(paire());
             return new ValeurMain(2, paire(), nieme_phc(1, x), nieme_phc(2,x), nieme_phc(3,x), 0);
         }
-        return new ValeurMain(1, nieme_phc(1,x), nieme_phc(2,x), nieme_phc(3,x), nieme_phc(4,x), nieme_phc(5,x));
+        return new Poker2.ValeurMain(1, nieme_phc(1,x), nieme_phc(2,x), nieme_phc(3,x), nieme_phc(4,x), nieme_phc(5,x));
     }
     public int paire(){
         for (Carte y:main)
@@ -51,22 +51,20 @@ public class Joueur {
             return max;
         else return 0;//Sinon on revoit 0, qui sert de false
     }
-    private int brelan()
+    public int brelan() //Systeme different que paire, on s'assure que chaque carte (i, j, et k) soient differentes
     {
-        for (Carte x:main)
+        for (int i = 0; i!= Carte.size()-2;++i)
         {
-            for (Carte y:main)
+            for (int j = i+1; j < Carte.size(); ++j)
             {
-                for (Carte z:main)
+                for (int k = j+1; k < Carte.size(); ++k)
                 {
-                    if (x.getNombre() == y.getNombre() && y.getNombre() == z.getNombre() && x.getCouleur()!=y.getCouleur() && y.getCouleur()!=z.getCouleur() && x.getCouleur()!=z.getCouleur())
-                    {
-                        return x.getNombre();
-                    }
+                    if (cartes.get(i).nombre == Carte.get(j).nombre && Carte.get(j).nombre == Carte.get(k).nombre)
+                        return Cartes.get(i).nombre;
                 }
             }
         }
-    return 0;
+        return 0;
     }
     public int nieme_phc(int n, ArrayList<Integer> nbr_a_enlever){
         ArrayList<Integer> liste_temp = new ArrayList<>();//On crée une liste temporaire

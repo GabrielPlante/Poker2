@@ -124,8 +124,9 @@ public class JoueurTest {
         assertEquals(joueur7.brelan(),5);
     }
 
+
     @Test
-    public void suite(){
+    public void suiteTest(){
         assertEquals(joueur9.suite(),7);
         assertEquals(joueur10.suite(),11);
         assertEquals(joueur11.suite(),0);

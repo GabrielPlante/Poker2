@@ -11,9 +11,13 @@ public class Joueur {
 
     public ValeurMain valeur_main(){
         ArrayList<Integer> x = new ArrayList<>();
-        if (this.double_paire() != 0) {
-            x.add(this.double_paire());
-            return new ValeurMain(3, this.double_paire(), this.nieme_phc(1, x), 0, 0, 0);
+        if (brelan() !=0){
+            x.add(brelan());
+            return new ValeurMain(4, brelan(), nieme_phc(1, x), nieme_phc(2, x),0,0);
+        }
+        if (double_paire() != 0){
+            x.add(double_paire());
+            return new ValeurMain(3, double_paire(), nieme_phc(1, x), 0, 0, 0);
         }
         if (paire() != 0){
             x.add(paire());
@@ -51,7 +55,7 @@ public class Joueur {
             return max;
         else return 0;//Sinon on revoit 0, qui sert de false
     }
-    private int brelan()//Systeme different que paire, on s'assure que chaque carte (i, j, et k) soient differentes
+    public int brelan()//Systeme different que paire, on s'assure que chaque carte (i, j, et k) soient differentes
     {
         for (int i = 0; i!=main.size()-2;++i)
         {
@@ -59,8 +63,8 @@ public class Joueur {
             {
                 for (int k = j+1; k < main.size(); ++k)
                 {
-                    if (main.get(i).nombre == main.get(j).getNombre && main.get(j).getNombre == main.get(k).getNombre)
-                        return main.get(i).getNombre;
+                    if (main.get(i).getNombre() == main.get(j).getNombre() && main.get(j).getNombre() == main.get(k).getNombre())
+                        return main.get(i).getNombre();
                 }
             }
         }

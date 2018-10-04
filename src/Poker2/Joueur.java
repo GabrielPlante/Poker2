@@ -51,16 +51,16 @@ public class Joueur {
             return max;
         else return 0;//Sinon on revoit 0, qui sert de false
     }
-    public int brelan() //Systeme different que paire, on s'assure que chaque carte (i, j, et k) soient differentes
+    private int brelan()//Systeme different que paire, on s'assure que chaque carte (i, j, et k) soient differentes
     {
-        for (int i = 0; i!= Carte.size()-2;++i)
+        for (int i = 0; i!=main.size()-2;++i)
         {
-            for (int j = i+1; j < Carte.size(); ++j)
+            for (int j = i+1; j < main.size(); ++j)
             {
-                for (int k = j+1; k < Carte.size(); ++k)
+                for (int k = j+1; k < main.size(); ++k)
                 {
-                    if (cartes.get(i).nombre == Carte.get(j).nombre && Carte.get(j).nombre == Carte.get(k).nombre)
-                        return Cartes.get(i).nombre;
+                    if (main.get(i).nombre == main.get(j).getNombre && main.get(j).getNombre == main.get(k).getNombre)
+                        return main.get(i).getNombre;
                 }
             }
         }

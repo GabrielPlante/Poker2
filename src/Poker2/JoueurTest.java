@@ -33,25 +33,49 @@ public class JoueurTest {
     private Joueur joueur5;
     private ArrayList<Integer> liste_nbr_jx;
     private ArrayList<String> liste_col_jx;
+    private Joueur joueur6;
+    private ArrayList<Integer> liste_nbr_jx;
+    private ArrayList<String> liste_col_jx;
+    private Joueur joueur7;
+    private ArrayList<Integer> liste_nbr_jx;
+    private ArrayList<String> liste_col_jx;
     private Joueur joueurx;
     @Before
     public void initialize() {
         ArrayList<Integer> liste_nbr_j1 = new ArrayList<>(Arrays.asList(2, 9, 4, 5, 6));
         liste_col_j1 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Pi", "Pi"));
         joueur1 = creer_joueur(liste_nbr_j1, liste_col_j1);
+
+
         liste_nbr_j2 = new ArrayList<>(Arrays.asList(3, 3, 7, 8, 10));
         liste_col_j2 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Pi", "Pi"));
         joueur2 = creer_joueur(liste_nbr_j2, liste_col_j2);
+
+
         liste_nbr_j3 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
         liste_col_j3 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
         joueur3 = creer_joueur(liste_nbr_j3, liste_col_j3);
+
+
         liste_nbr_j4 = new ArrayList<>(Arrays.asList(13, 13, 4, 4, 12));
         liste_col_j4 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
         joueur4 = creer_joueur(liste_nbr_j4, liste_col_j4);
+
+
         liste_nbr_j5 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
         liste_col_j5 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
         joueur5 = creer_joueur(liste_nbr_j5, liste_col_j5);
-        liste_nbr_jx = new ArrayList<>(Arrays.asList(3, 3, 8, 8, 11));
+
+
+        liste_nbr_j6 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
+        liste_col_j6 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
+        joueur6 = creer_joueur(liste_nbr_j5, liste_col_j5);
+
+        liste_nbr_j7 = new ArrayList<>(Arrays.asList(13, 8, 5, 5, 5));
+        liste_col_j7 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
+        joueur7 = creer_joueur(liste_nbr_j5, liste_col_j5);
+
+        liste_nbr_jx = new ArrayList<>(Arrays.asList(14, 3, 14, 14, 11));
         liste_col_jx = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
         joueurx = creer_joueur(liste_nbr_jx, liste_col_jx);
     }
@@ -73,7 +97,11 @@ public class JoueurTest {
     public void double_paire() {
         assertEquals(joueur4.double_paire(), 13);
         assertEquals(joueur5.double_paire(), 0);
-
+    }
+    @Test
+    public void brelan() {
+        assertEquals(joueur6.brelan(),5);
+        assertEquals(joueur7.brelan(),14);
     }
 
     @Test

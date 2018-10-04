@@ -1,5 +1,7 @@
 package Poker2;
 
+import sun.font.TrueTypeFont;
+
 public class Carte {
     public Carte(int a, String b)
     {
@@ -20,10 +22,20 @@ public class Carte {
         }
     }
 
-    public boolean estPasEgal(Carte c2){
+    public boolean estPasMemeCarte(Carte c2){
         if (this.couleur == c2.getCouleur() && this.nombre == c2.getNombre())
             return false;
         return true;
+    }
+    public boolean estMemeCouleur(Carte c2){
+        if (this.couleur == c2.getCouleur())
+            return true;
+        return false;
+    }
+    public boolean aMemeValeur(Carte c2){
+        if (this.nombre == c2.getNombre())
+            return true;
+        return false;
     }
 
     @Override

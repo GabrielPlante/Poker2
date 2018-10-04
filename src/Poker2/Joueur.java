@@ -15,7 +15,7 @@ public class Joueur {
         {
             for (Carte x:main)
             {
-                if (y.getNombre() == x.getNombre() && !y.getCouleur().equals(x.getCouleur()))//On regarde si c'est le meme getNombre et pas la meme getCouleur
+                if (y.aMemeValeur(x) && y.estPasMemeCarte(x))
                     return x.getNombre();
             }
         }
@@ -29,7 +29,7 @@ public class Joueur {
         {
             for (Carte x:main)
             {
-                if (x.estPasEgal(y) && x.getNombre() == y.getNombre() &&
+                if (x.estPasMemeCarte(y) && x.aMemeValeur(y) &&
                 !res.contains(x.getNombre()))
                     res.add(x.getNombre());
             }
@@ -57,20 +57,20 @@ public class Joueur {
         return 0;
     }
     public int suite() {
-        int min = 13;
-        int isAllHere = 0;
+        int min = 14;
+        int carteAdjacente = 0;
         for (Carte y : main) {
             if (y.getNombre() < min) min = y.getNombre();
         }
         for (int i = min + 1; i <= min + 4; i++) {
             for (Carte y : main) {
                 if (y.getNombre() == i) {
-                    isAllHere += 1;
+                    carteAdjacente += 1;
                     break;
                 }
             }
         }
-        if (isAllHere == 4) return min+4;
+        if (carteAdjacente == 4) return min+4;
         return 0;
     }
         public int niemePhc(int n, ArrayList<Integer> nbr_a_enlever){

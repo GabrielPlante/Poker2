@@ -113,17 +113,9 @@ public class JoueurTest {
 
     @Test
     public void doublePaire() {
-        /*List<E> a = resultFromTest();
-        List<E> expected = Arrays.asList(new E(), new E(), ...);
-
-        assertTrue("Expected 'a' and 'expected' to be equal."+
-                        "\n  'a'        = "+a+
-                        "\n  'expected' = "+expected,
-                expected.equals(a));*/
-
         l4 = new ArrayList<Integer>(Arrays.asList(13, 4));
-        assertTrue(joueur4.doublePaire().equals(l4));
-        assertTrue(joueur5.doublePaire().equals(new ArrayList<Integer>()));
+        assertEquals(joueur4.doublePaire(), l4);
+        assertEquals(joueur5.doublePaire(), new ArrayList<Integer>());
     }
 
     @Test

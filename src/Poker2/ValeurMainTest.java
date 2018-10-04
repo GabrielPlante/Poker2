@@ -88,6 +88,104 @@ public class ValeurMainTest {
     private ArrayList<String> liste_col_j23;
     private Joueur joueur23;
 
+    private ArrayList<Integer> listeNombreJTestSensible1;
+    private ArrayList<String> listeCoulJTestSensible1;
+    private Joueur joueurTestSensible1;
+
+    private ArrayList<Integer> listeNombreJTestSensible2;
+    private ArrayList<String> listeCoulJTestSensible2;
+    private Joueur joueurTestSensible2;
+
+
+
+    private ArrayList<Integer> listeNombreJTestSensible3;
+    private ArrayList<String> listeCoulJTestSensible3;
+    private Joueur joueurTestSensible3;
+
+    private ArrayList<Integer> listeNombreJTestSensible4;
+    private ArrayList<String> listeCoulJTestSensible4;
+    private Joueur joueurTestSensible4;
+
+
+
+    private ArrayList<Integer> listeNombreJTestSensible5;
+    private ArrayList<String> listeCoulJTestSensible5;
+    private Joueur joueurTestSensible5;
+
+    private ArrayList<Integer> listeNombreJTestSensible6;
+    private ArrayList<String> listeCoulJTestSensible6;
+    private Joueur joueurTestSensible6;
+
+
+
+    private ArrayList<Integer> listeNombreJTestSensible7;
+    private ArrayList<String> listeCoulJTestSensible7;
+    private Joueur joueurTestSensible7;
+
+    private ArrayList<Integer> listeNombreJTestSensible8;
+    private ArrayList<String> listeCoulJTestSensible8;
+    private Joueur joueurTestSensible8;
+
+
+
+    private ArrayList<Integer> listeNombreJTestSensible9;
+    private ArrayList<String> listeCoulJTestSensible9;
+    private Joueur joueurTestSensible9;
+
+    private ArrayList<Integer> listeNombreJTestSensible10;
+    private ArrayList<String> listeCoulJTestSensible10;
+    private Joueur joueurTestSensible10;
+
+
+
+    private ArrayList<Integer> listeNombreJTestSensible11;
+    private ArrayList<String> listeCoulJTestSensible11;
+    private Joueur joueurTestSensible11;
+
+    private ArrayList<Integer> listeNombreJTestSensible12;
+    private ArrayList<String> listeCoulJTestSensible12;
+    private Joueur joueurTestSensible12;
+
+
+
+    private ArrayList<Integer> listeNombreJTestSensible13;
+    private ArrayList<String> listeCoulJTestSensible13;
+    private Joueur joueurTestSensible13;
+
+    private ArrayList<Integer> listeNombreJTestSensible14;
+    private ArrayList<String> listeCoulJTestSensible14;
+    private Joueur joueurTestSensible14;
+
+
+
+    private ArrayList<Integer> listeNombreJTestSensible15;
+    private ArrayList<String> listeCoulJTestSensible15;
+    private Joueur joueurTestSensible15;
+
+    private ArrayList<Integer> listeNombreJTestSensible16;
+    private ArrayList<String> listeCoulJTestSensible16;
+    private Joueur joueurTestSensible16;
+
+
+
+    private ArrayList<Integer> listeNombreJTestSensible17;
+    private ArrayList<String> listeCoulJTestSensible17;
+    private Joueur joueurTestSensible17;
+
+    private ArrayList<Integer> listeNombreJTestSensible18;
+    private ArrayList<String> listeCoulJTestSensible18;
+    private Joueur joueurTestSensible18;
+
+
+
+    private ArrayList<Integer> listeNombreJTestSensible19;
+    private ArrayList<String> listeCoulJTestSensible19;
+    private Joueur joueurTestSensible19;
+
+    private ArrayList<Integer> listeNombreJTestSensible20;
+    private ArrayList<String> listeCoulJTestSensible20;
+    private Joueur joueurTestSensible20;
+
 
     private List<Integer> list1, list2, list3, list4,
         list5, list6, list7, list8, list9, list10,list11;
@@ -191,6 +289,104 @@ public class ValeurMainTest {
         liste_nbr_j23 = new ArrayList<>(Arrays.asList(2, 5, 4, 6, 7));
         liste_col_j23 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
         joueur23 = creerJoueur(liste_nbr_j23, liste_col_j23);
+
+        listeNombreJTestSensible1 = new ArrayList<>(Arrays.asList(2, 2, 8, 6, 7));
+        listeCoulJTestSensible1 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
+        joueurTestSensible1 = creerJoueur(listeNombreJTestSensible1, listeCoulJTestSensible1);
+
+        listeNombreJTestSensible2 = new ArrayList<>(Arrays.asList(2, 2, 5, 6, 7));
+        listeCoulJTestSensible2 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
+        joueurTestSensible2 = creerJoueur(listeNombreJTestSensible2, listeCoulJTestSensible2);
+
+
+
+        listeNombreJTestSensible3 = new ArrayList<>(Arrays.asList(2, 5, 5, 2, 7));
+        listeCoulJTestSensible3 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
+        joueurTestSensible3 = creerJoueur(listeNombreJTestSensible3, listeCoulJTestSensible3);
+
+        listeNombreJTestSensible4 = new ArrayList<>(Arrays.asList(2, 5, 5, 2, 3));
+        listeCoulJTestSensible4 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
+        joueurTestSensible4 = creerJoueur(listeNombreJTestSensible4, listeCoulJTestSensible4);
+
+
+
+        listeNombreJTestSensible5 = new ArrayList<>(Arrays.asList(12, 12, 5, 5, 2));
+        listeCoulJTestSensible5 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
+        joueurTestSensible5 = creerJoueur(listeNombreJTestSensible5, listeCoulJTestSensible5);
+
+        listeNombreJTestSensible6 = new ArrayList<>(Arrays.asList(12, 12, 4, 4, 3));
+        listeCoulJTestSensible6 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
+        joueurTestSensible6 = creerJoueur(listeNombreJTestSensible6, listeCoulJTestSensible6);
+
+
+
+        listeNombreJTestSensible7 = new ArrayList<>(Arrays.asList(8, 5, 4, 6, 7));
+        listeCoulJTestSensible7 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
+        joueurTestSensible7 = creerJoueur(listeNombreJTestSensible7, listeCoulJTestSensible7);
+
+        listeNombreJTestSensible8 = new ArrayList<>(Arrays.asList(2, 5, 4, 6, 3));
+        listeCoulJTestSensible8 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
+        joueurTestSensible8 = creerJoueur(listeNombreJTestSensible8, listeCoulJTestSensible8);
+
+
+
+        listeNombreJTestSensible9 = new ArrayList<>(Arrays.asList(2, 5, 4, 6, 7));
+        listeCoulJTestSensible9 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+        joueurTestSensible9 = creerJoueur(listeNombreJTestSensible9, listeCoulJTestSensible9);
+
+        listeNombreJTestSensible10 = new ArrayList<>(Arrays.asList(3, 5, 4, 6, 7));
+        listeCoulJTestSensible10 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
+        joueurTestSensible10 = creerJoueur(listeNombreJTestSensible10, listeCoulJTestSensible10);
+
+
+
+        listeNombreJTestSensible11 = new ArrayList<>(Arrays.asList(2, 5, 4, 6, 7));
+        listeCoulJTestSensible11 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+        joueurTestSensible11 = creerJoueur(listeNombreJTestSensible11, listeCoulJTestSensible11);
+
+        listeNombreJTestSensible12 = new ArrayList<>(Arrays.asList(1, 5, 4, 6, 7));
+        listeCoulJTestSensible12 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+        joueurTestSensible12 = creerJoueur(listeNombreJTestSensible12, listeCoulJTestSensible12);
+
+
+
+        listeNombreJTestSensible13 = new ArrayList<>(Arrays.asList(2, 2, 2, 2, 7));
+        listeCoulJTestSensible13 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Tr", "Co"));
+        joueurTestSensible13 = creerJoueur(listeNombreJTestSensible13, listeCoulJTestSensible13);
+
+        listeNombreJTestSensible14 = new ArrayList<>(Arrays.asList(3, 3, 3, 4, 4));
+        listeCoulJTestSensible14 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Tr", "Co"));
+        joueurTestSensible14 = creerJoueur(listeNombreJTestSensible14, listeCoulJTestSensible14);
+
+
+
+        listeNombreJTestSensible15 = new ArrayList<>(Arrays.asList(7, 7, 7, 6, 7));
+        listeCoulJTestSensible15 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Tr", "Co"));
+        joueurTestSensible15 = creerJoueur(listeNombreJTestSensible15, listeCoulJTestSensible15);
+
+        listeNombreJTestSensible16 = new ArrayList<>(Arrays.asList(3, 3, 3, 3, 13));
+        listeCoulJTestSensible16 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Tr", "Co"));
+        joueurTestSensible16 = creerJoueur(listeNombreJTestSensible16, listeCoulJTestSensible16);
+
+
+
+        listeNombreJTestSensible17 = new ArrayList<>(Arrays.asList(8, 5, 4, 6, 7));
+        listeCoulJTestSensible17 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+        joueurTestSensible17 = creerJoueur(listeNombreJTestSensible17, listeCoulJTestSensible17);
+
+        listeNombreJTestSensible18 = new ArrayList<>(Arrays.asList(3, 5, 4, 6, 7));
+        listeCoulJTestSensible18 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+        joueurTestSensible18 = creerJoueur(listeNombreJTestSensible18, listeCoulJTestSensible18);
+
+
+
+        listeNombreJTestSensible19 = new ArrayList<>(Arrays.asList(2, 2, 2, 6, 7));
+        listeCoulJTestSensible19 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Tr", "Co"));
+        joueurTestSensible19 = creerJoueur(listeNombreJTestSensible19, listeCoulJTestSensible19);
+
+        listeNombreJTestSensible20 = new ArrayList<>(Arrays.asList(13, 13, 12, 12, 11));
+        listeCoulJTestSensible20 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Tr", "Co"));
+        joueurTestSensible20 = creerJoueur(listeNombreJTestSensible20, listeCoulJTestSensible20);
     }
 
     @Test
@@ -268,13 +464,37 @@ public class ValeurMainTest {
         //vmJ21 <=
         assertEquals(vmJ21.meilleureQue(vmJ21), 0);
 
-        /*ValeurMain main1 = new ValeurMain(2, 2, 2, 2, 2, 2);
-        ValeurMain main2 = new ValeurMain(2, 2, 2, 2, 2, 1);
-        ValeurMain main3 = new ValeurMain(1, 3, 3, 3, 3, 3);
-        assertEquals(main1.meilleureQue(main1), 0);
-        assertEquals(main1.meilleureQue(main2), 1);
-        assertEquals(main1.meilleureQue(main3), 1);
-        assertEquals(main3.meilleureQue(main1), -1);*/
+        ValeurMain main1 = new ValeurMain(joueurTestSensible1);
+        ValeurMain main2 = new ValeurMain(joueurTestSensible2);
+        ValeurMain main3 = new ValeurMain(joueurTestSensible3);
+        ValeurMain main4 = new ValeurMain(joueurTestSensible4);
+        ValeurMain main5 = new ValeurMain(joueurTestSensible5);
+        ValeurMain main6 = new ValeurMain(joueurTestSensible6);
+        ValeurMain main7 = new ValeurMain(joueurTestSensible7);
+        ValeurMain main8 = new ValeurMain(joueurTestSensible8);
+        ValeurMain main9 = new ValeurMain(joueurTestSensible9);
+        ValeurMain main10 = new ValeurMain(joueurTestSensible10);
+        ValeurMain main11 = new ValeurMain(joueurTestSensible11);
+        ValeurMain main12 = new ValeurMain(joueurTestSensible12);
+        ValeurMain main13 = new ValeurMain(joueurTestSensible13);
+        ValeurMain main14 = new ValeurMain(joueurTestSensible14);
+        ValeurMain main15 = new ValeurMain(joueurTestSensible15);
+        ValeurMain main16 = new ValeurMain(joueurTestSensible16);
+        ValeurMain main17 = new ValeurMain(joueurTestSensible17);
+        ValeurMain main18 = new ValeurMain(joueurTestSensible18);
+        ValeurMain main19 = new ValeurMain(joueurTestSensible19);
+        ValeurMain main20 = new ValeurMain(joueurTestSensible20);
+
+        assertEquals(main1.meilleureQue(main2),1);
+        assertEquals(main3.meilleureQue(main4),1);
+        assertEquals(main5.meilleureQue(main6),1);
+        assertEquals(main7.meilleureQue(main8),1);
+        assertEquals(main9.meilleureQue(main10),1);
+        assertEquals(main11.meilleureQue(main12),1);
+        assertEquals(main13.meilleureQue(main14),1);
+        assertEquals(main15.meilleureQue(main16),1);
+        assertEquals(main17.meilleureQue(main18),1);
+        assertEquals(main19.meilleureQue(main20),1);
     }
 
     @Test

@@ -187,6 +187,8 @@ public class JoueurTest {
         liste_nbr_j23 = new ArrayList<>(Arrays.asList(2, 5, 4, 6, 7));
         liste_col_j23 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
         joueur23 = creerJoueur(liste_nbr_j23, liste_col_j23);
+
+
     }
 
     @Test

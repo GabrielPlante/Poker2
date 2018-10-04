@@ -11,10 +11,12 @@ public class ValeurMain {
             valeur.add(4);
             valeur.add(joueur.brelan());
         }
-        if (joueur.double_paire() != 0){
-            x.add(joueur.double_paire());
+        if (joueur.double_paire().size() == 2){
+            x.add(joueur.double_paire().get(0));
+            x.add(joueur.double_paire().get(1));
             valeur.add(3);
-            valeur.add(joueur.double_paire());
+            valeur.add(joueur.double_paire().get(0));
+            valeur.add(joueur.double_paire().get(1));
             valeur.add(joueur.nieme_phc(1,x));
         }
         if (joueur.paire() != 0){

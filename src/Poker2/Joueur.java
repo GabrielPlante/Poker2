@@ -20,24 +20,28 @@ public class Joueur {
         }
         return 0;
     }
-    public int double_paire()
+    public List<Integer> double_paire()
     {
-        int nombreDePaireFoisDeux = 0, paireMax = 0;// a:nombre de paires, max la valeur de la plus grande paire
+        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> vide = new ArrayList<Integer>();
         for (Carte y:main)
         {
             for (Carte x:main)
             {
-                if (y.getNombre() == x.getNombre() && !y.getCouleur().equals(x.getCouleur()))
+                if (x.estPasEgal(y) && x.getNombre() == y.getNombre())
                 {
-                    if (y.getNombre() >= paireMax)
-                        paireMax = y.getNombre();
-                    ++nombreDePaireFoisDeux;
+                    res.add(x.getNombre());
+                    System.out.println("added to res -> " + x.getNombre());
                 }
             }
         }
-        if (nombreDePaireFoisDeux == 4) //On teste chaque carte, donc s'il y a une paire, a == 2, si il y a 2 paire, a == 4
-            return paireMax;
-        else return 0;//Sinon on revoit 0, qui sert de false
+        if (res.size() > 1) { //si on a bien trouvé deux paires
+            Collections.sort(res);
+            Collections.reverse(res);
+            System.out.println("res ==> " + res);
+            return res;
+        }
+        return vide;
     }
     public int brelan()//Systeme different que paire, on s'assure que chaque carte (i, j, et k) soient differentes
     {

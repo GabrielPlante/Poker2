@@ -42,6 +42,12 @@ public class Carte {
         //return compareage-this.studentage;
     }
 
+    public boolean estPasEgal(Carte c2){
+        if (this.couleur == c2.getCouleur() && this.nombre == c2.getNombre())
+            return false;
+        return true;
+    }
+
     @Override
     public String toString() {
         return nombre + couleur;

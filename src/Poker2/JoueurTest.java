@@ -40,6 +40,15 @@ public class JoueurTest {
     private ArrayList<Integer> liste_nbr_j8;
     private ArrayList<String> liste_col_j8;
     private Joueur joueur8;
+    private ArrayList<Integer> liste_nbr_j9;
+    private ArrayList<String> liste_col_j9;
+    private Joueur joueur9;
+    private ArrayList<Integer> liste_nbr_j10;
+    private ArrayList<String> liste_col_j10;
+    private Joueur joueur10;
+    private ArrayList<Integer> liste_nbr_j11;
+    private ArrayList<String> liste_col_j11;
+    private Joueur joueur11;
 
     private List<Integer> l4;
 
@@ -81,6 +90,18 @@ public class JoueurTest {
         liste_nbr_j8 = new ArrayList<>(Arrays.asList(14, 3, 14, 14, 11));
         liste_col_j8 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
         joueur8 = creerJoueur(liste_nbr_j8, liste_col_j8);
+
+        liste_nbr_j9 = new ArrayList<>(Arrays.asList(3, 5, 4, 7, 6));
+        liste_col_j9 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
+        joueur9 = creerJoueur(liste_nbr_j9, liste_col_j9);
+
+        liste_nbr_j10 = new ArrayList<>(Arrays.asList(7, 9, 8, 10, 11));
+        liste_col_j10 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
+        joueur10 = creerJoueur(liste_nbr_j10, liste_col_j10);
+
+        liste_nbr_j11 = new ArrayList<>(Arrays.asList(2, 3, 4, 6, 7));
+        liste_col_j11 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
+        joueur11 = creerJoueur(liste_nbr_j11, liste_col_j11);
     }
 
     @Test
@@ -109,6 +130,13 @@ public class JoueurTest {
     public void brelan() {
         assertEquals(joueur6.brelan(),13);
         assertEquals(joueur7.brelan(),5);
+    }
+
+    @Test
+    public void suite(){
+        assertEquals(joueur9.suite(),7);
+        assertEquals(joueur10.suite(),11);
+        assertEquals(joueur11.suite(),0);
     }
 
     @Test

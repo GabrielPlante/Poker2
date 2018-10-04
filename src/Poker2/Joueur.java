@@ -56,7 +56,24 @@ public class Joueur {
         }
         return 0;
     }
-    public int niemePhc(int n, ArrayList<Integer> nbr_a_enlever){
+    public int suite() {
+        int min = 13;
+        int isAllHere = 0;
+        for (Carte y : main) {
+            if (y.getNombre() < min) min = y.getNombre();
+        }
+        for (int i = min + 1; i <= min + 4; i++) {
+            for (Carte y : main) {
+                if (y.getNombre() == i) {
+                    isAllHere += 1;
+                    break;
+                }
+            }
+        }
+        if (isAllHere == 4) return min+4;
+        return 0;
+    }
+        public int niemePhc(int n, ArrayList<Integer> nbr_a_enlever){
         ArrayList<Integer> liste_temp = new ArrayList<>();//On crée une liste temporaire
         for (Carte y:main){
             boolean add = true;

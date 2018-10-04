@@ -3,6 +3,10 @@ package Poker2;
 import java.util.ArrayList;
 
 public class ValeurMain {
+    private ArrayList<Integer> valeur = new ArrayList<>();
+    public ArrayList<Integer> getValeurMain(){
+        return valeur;
+    }
     public ValeurMain(Joueur joueur) {
         ArrayList<Integer> x = new ArrayList<>();
         if (joueur.quinteFlush() != 0){
@@ -56,9 +60,7 @@ public class ValeurMain {
         while(valeur.size() < 6)
             valeur.add(0);
     }
-    public ArrayList<Integer> getValeurMain(){
-        return valeur;
-    }
+
     public int meilleureQue(ValeurMain autreMain){
         for (int i = 0; i!=6; ++i){
             if (getValeurMain().get(i) > autreMain.getValeurMain().get(i))
@@ -83,5 +85,4 @@ public class ValeurMain {
             default: return "Erreur";
         }
     }
-    private ArrayList<Integer> valeur = new ArrayList<>();
 }

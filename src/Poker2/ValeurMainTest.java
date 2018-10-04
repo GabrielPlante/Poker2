@@ -97,8 +97,7 @@ public class ValeurMainTest {
         ArrayList<Integer> liste_nbr_j1 = new ArrayList<>(Arrays.asList(2, 9, 4, 5, 6));
         liste_col_j1 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Pi", "Pi"));
         joueur1 = creerJoueur(liste_nbr_j1, liste_col_j1);
-
-
+        //paire
         liste_nbr_j2 = new ArrayList<>(Arrays.asList(3, 3, 7, 8, 10));
         liste_col_j2 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Pi", "Pi"));
         joueur2 = creerJoueur(liste_nbr_j2, liste_col_j2);
@@ -108,17 +107,17 @@ public class ValeurMainTest {
         liste_col_j3 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
         joueur3 = creerJoueur(liste_nbr_j3, liste_col_j3);
 
-
+        //double paire
         liste_nbr_j4 = new ArrayList<>(Arrays.asList(13, 13, 4, 4, 12));
         liste_col_j4 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
         joueur4 = creerJoueur(liste_nbr_j4, liste_col_j4);
 
-
+        //paire
         liste_nbr_j5 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
         liste_col_j5 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
         joueur5 = creerJoueur(liste_nbr_j5, liste_col_j5);
 
-
+        //brelan
         liste_nbr_j6 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 13));
         liste_col_j6 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
         joueur6 = creerJoueur(liste_nbr_j6, liste_col_j6);
@@ -130,7 +129,7 @@ public class ValeurMainTest {
         liste_nbr_j8 = new ArrayList<>(Arrays.asList(14, 3, 14, 14, 11));
         liste_col_j8 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
         joueur8 = creerJoueur(liste_nbr_j8, liste_col_j8);
-
+        //suite
         liste_nbr_j9 = new ArrayList<>(Arrays.asList(3, 5, 4, 7, 6));
         liste_col_j9 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
         joueur9 = creerJoueur(liste_nbr_j9, liste_col_j9);
@@ -142,7 +141,7 @@ public class ValeurMainTest {
         liste_nbr_j11 = new ArrayList<>(Arrays.asList(2, 3, 4, 6, 7));
         liste_col_j11 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
         joueur11 = creerJoueur(liste_nbr_j11, liste_col_j11);
-
+        //couleur
         liste_nbr_j12 = new ArrayList<>(Arrays.asList(2, 3, 4, 6, 7));
         liste_col_j12 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
         joueur12 = creerJoueur(liste_nbr_j12, liste_col_j12);
@@ -155,7 +154,7 @@ public class ValeurMainTest {
         liste_col_j14 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
         joueur14 = creerJoueur(liste_nbr_j14, liste_col_j14);
 
-        //pour full ce qui suit
+        //pour full
         liste_nbr_j15 = new ArrayList<>(Arrays.asList(3, 3, 3, 2, 2));
         liste_col_j15 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
         joueur15 = creerJoueur(liste_nbr_j15, liste_col_j15);
@@ -195,7 +194,27 @@ public class ValeurMainTest {
     }
 
     @Test
-    public void meilleurQue() {//TODO refaire ça
+    public void meilleurQueTest() {//TODO refaire ça
+        ValeurMain vmJ1 = new ValeurMain(joueur1);
+        ValeurMain vmJ2 = new ValeurMain(joueur2);
+        ValeurMain vmJ4 = new ValeurMain(joueur4);
+        ValeurMain vmJ6 = new ValeurMain(joueur6);
+        ValeurMain vmJ9 = new ValeurMain(joueur9);
+        ValeurMain vmJ12 = new ValeurMain(joueur12);
+        ValeurMain vmJ15 = new ValeurMain(joueur15);
+        ValeurMain vmJ18 = new ValeurMain(joueur18);
+        ValeurMain vmJ21 = new ValeurMain(joueur21);
+
+        //vmJ1 <
+        assertEquals(vmJ1.meilleureQue(vmJ2), -1); //paire
+        assertEquals(vmJ1.meilleureQue(vmJ4), -1); //double paire
+        assertEquals(vmJ1.meilleureQue(vmJ6), -1); //brelan
+        assertEquals(vmJ1.meilleureQue(vmJ9), -1);//suite
+        assertEquals(vmJ1.meilleureQue(vmJ12), -1);//couleur
+        assertEquals(vmJ1.meilleureQue(vmJ15), -1);//full
+        assertEquals(vmJ1.meilleureQue(vmJ18), -1);//carre
+        assertEquals(vmJ1.meilleureQue(vmJ21), -1);//quinte flush
+
         /*ValeurMain main1 = new ValeurMain(2, 2, 2, 2, 2, 2);
         ValeurMain main2 = new ValeurMain(2, 2, 2, 2, 2, 1);
         ValeurMain main3 = new ValeurMain(1, 3, 3, 3, 3, 3);

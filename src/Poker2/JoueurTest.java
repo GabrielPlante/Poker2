@@ -76,6 +76,15 @@ public class JoueurTest {
     private ArrayList<Integer> liste_nbr_j20;
     private ArrayList<String> liste_col_j20;
     private Joueur joueur20;
+    private ArrayList<Integer> liste_nbr_j21;
+    private ArrayList<String> liste_col_j21;
+    private Joueur joueur21;
+    private ArrayList<Integer> liste_nbr_j22;
+    private ArrayList<String> liste_col_j22;
+    private Joueur joueur22;
+    private ArrayList<Integer> liste_nbr_j23;
+    private ArrayList<String> liste_col_j23;
+    private Joueur joueur23;
 
 
     private List<Integer> l4;
@@ -166,6 +175,18 @@ public class JoueurTest {
         liste_nbr_j20 = new ArrayList<>(Arrays.asList(5, 5, 5, 6, 7));
         liste_col_j20 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
         joueur20 = creerJoueur(liste_nbr_j20, liste_col_j20);
+        //quinte flush
+        liste_nbr_j21 = new ArrayList<>(Arrays.asList(8, 7, 6, 5, 4));
+        liste_col_j21 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+        joueur21 = creerJoueur(liste_nbr_j21, liste_col_j21);
+
+        liste_nbr_j22 = new ArrayList<>(Arrays.asList(13, 11, 9, 12, 10));
+        liste_col_j22 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+        joueur22 = creerJoueur(liste_nbr_j22, liste_col_j22);
+
+        liste_nbr_j23 = new ArrayList<>(Arrays.asList(2, 5, 4, 6, 7));
+        liste_col_j23 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+        joueur23 = creerJoueur(liste_nbr_j23, liste_col_j23);
     }
 
     @Test
@@ -221,6 +242,14 @@ public class JoueurTest {
         assertEquals(joueur19.carre(),4);
         assertEquals(joueur20.carre(),0);
     }
+
+    @Test
+    public void quinteFlushTest(){
+        assertEquals(joueur21.quinteFlush(), 8);
+        assertEquals(joueur22.quinteFlush(), 13);
+        assertEquals(joueur23.quinteFlush(), 0);
+    }
+
     @Test
     public void niemePhc() {
         ArrayList<Integer> a1 = new ArrayList<>();

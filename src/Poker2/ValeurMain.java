@@ -5,13 +5,15 @@ import java.util.ArrayList;
 public class ValeurMain {
     public ValeurMain(Joueur joueur) {
         ArrayList<Integer> x = new ArrayList<>();
-        if (joueur.carre() !=0){
+        if (joueur.quinteFlush() != 0){
+            valeur.add(9);
+            valeur.add(joueur.quinteFlush());
+        }else if (joueur.carre() !=0){
             x.add(joueur.carre());
             valeur.add(8);
             valeur.add(joueur.carre());
             valeur.add(joueur.niemePhc(1, x));
-        }
-        if (joueur.full().size() > 0){
+        }else if (joueur.full().size() > 0){
             valeur.add(7);
             valeur.add(joueur.full().get(0));
             valeur.add(joueur.full().get(1));

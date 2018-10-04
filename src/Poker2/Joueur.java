@@ -120,6 +120,14 @@ public class Joueur {
         }
         return 0;
     }
+
+    public int quinteFlush()
+    {
+        if (suite() != 0 && couleur().size() > 0)
+            return suite();
+        return 0;
+    }
+
     public int niemePhc(int n, ArrayList<Integer> nbr_a_enlever){
         ArrayList<Integer> liste_temp = new ArrayList<>();//On crée une liste temporaire
         for (Carte y:main){

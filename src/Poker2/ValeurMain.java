@@ -5,7 +5,11 @@ import java.util.ArrayList;
 public class ValeurMain {
     public ValeurMain(Joueur joueur) {
         ArrayList<Integer> x = new ArrayList<>();
-        if (joueur.couleur().size() > 0) {
+        if (joueur.full().size() > 0){
+            valeur.add(7);
+            valeur.add(joueur.full().get(0));
+            valeur.add(joueur.full().get(1));
+        }else if (joueur.couleur().size() > 0) {
             valeur.add(6);
             for (Integer n: joueur.couleur())
                 valeur.add(n);

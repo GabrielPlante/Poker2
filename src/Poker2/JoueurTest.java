@@ -58,6 +58,15 @@ public class JoueurTest {
     private ArrayList<Integer> liste_nbr_j14;
     private ArrayList<String> liste_col_j14;
     private Joueur joueur14;
+    private ArrayList<Integer> liste_nbr_j15;
+    private ArrayList<String> liste_col_j15;
+    private Joueur joueur15;
+    private ArrayList<Integer> liste_nbr_j16;
+    private ArrayList<String> liste_col_j16;
+    private Joueur joueur16;
+    private ArrayList<Integer> liste_nbr_j17;
+    private ArrayList<String> liste_col_j17;
+    private Joueur joueur17;
 
 
     private List<Integer> l4;
@@ -124,6 +133,18 @@ public class JoueurTest {
         liste_nbr_j14 = new ArrayList<>(Arrays.asList(10, 3, 4, 6, 7));
         liste_col_j14 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
         joueur14 = creerJoueur(liste_nbr_j14, liste_col_j14);
+        //pour full ce qui suit
+        liste_nbr_j15 = new ArrayList<>(Arrays.asList(3, 3, 3, 2, 2));
+        liste_col_j15 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
+        joueur15 = creerJoueur(liste_nbr_j15, liste_col_j15);
+
+        liste_nbr_j16 = new ArrayList<>(Arrays.asList(4, 4, 4, 11, 11));
+        liste_col_j16 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
+        joueur16 = creerJoueur(liste_nbr_j16, liste_col_j16);
+
+        liste_nbr_j17 = new ArrayList<>(Arrays.asList(5, 5, 5, 6, 7));
+        liste_col_j17 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
+        joueur17 = creerJoueur(liste_nbr_j17, liste_col_j17);
     }
 
     @Test
@@ -162,6 +183,16 @@ public class JoueurTest {
         assertEquals(joueur12.couleur(), l12);
         assertEquals(joueur13.couleur(), l13);
         assertEquals(joueur14.couleur(), new ArrayList<Integer>());
+    }
+
+    @Test
+    public void fullTest(){
+        List<Integer> l15 = new ArrayList<>(Arrays.asList(3, 2));
+        List<Integer> l16 = new ArrayList<>(Arrays.asList(4, 11));
+
+        assertEquals(joueur15.full(), l15);
+        assertEquals(joueur16.full(), l16);
+        assertEquals(joueur17.full(), new ArrayList<Integer>());
     }
 
     @Test

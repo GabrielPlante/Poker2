@@ -92,6 +92,20 @@ public class Joueur {
         return res;
     }
 
+    public List<Integer> full()//On teste si il y a un brelan et une paire, et qu'il soit de nombre different
+    {
+        List<Integer> res = new ArrayList<Integer>();
+        if (brelan() != 0)
+            for (Carte x:main)
+                for (Carte y:main)
+                    if (x.aMemeValeur(y) && !x.estMemeCouleur(y) && x.getNombre() != brelan()
+                    && !res.contains(x.getNombre())){
+                        res.add(brelan());
+                        res.add(x.getNombre());
+                    }
+        return res;
+    }
+
     public int niemePhc(int n, ArrayList<Integer> nbr_a_enlever){
         ArrayList<Integer> liste_temp = new ArrayList<>();//On crée une liste temporaire
         for (Carte y:main){

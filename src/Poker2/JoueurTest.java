@@ -67,6 +67,15 @@ public class JoueurTest {
     private ArrayList<Integer> liste_nbr_j17;
     private ArrayList<String> liste_col_j17;
     private Joueur joueur17;
+    private ArrayList<Integer> liste_nbr_j18;
+    private ArrayList<String> liste_col_j18;
+    private Joueur joueur18;
+    private ArrayList<Integer> liste_nbr_j19;
+    private ArrayList<String> liste_col_j19;
+    private Joueur joueur19;
+    private ArrayList<Integer> liste_nbr_j20;
+    private ArrayList<String> liste_col_j20;
+    private Joueur joueur20;
 
 
     private List<Integer> l4;
@@ -145,24 +154,36 @@ public class JoueurTest {
         liste_nbr_j17 = new ArrayList<>(Arrays.asList(5, 5, 5, 6, 7));
         liste_col_j17 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
         joueur17 = creerJoueur(liste_nbr_j17, liste_col_j17);
+        //pour le carré
+        liste_nbr_j18 = new ArrayList<>(Arrays.asList(3, 3, 3, 3, 2));
+        liste_col_j18 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Co"));
+        joueur18 = creerJoueur(liste_nbr_j18, liste_col_j18);
+
+        liste_nbr_j19 = new ArrayList<>(Arrays.asList(4, 4, 4, 11, 4));
+        liste_col_j19 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Tr"));
+        joueur19 = creerJoueur(liste_nbr_j19, liste_col_j19);
+
+        liste_nbr_j20 = new ArrayList<>(Arrays.asList(5, 5, 5, 6, 7));
+        liste_col_j20 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
+        joueur20 = creerJoueur(liste_nbr_j20, liste_col_j20);
     }
 
     @Test
-    public void paire() {
+    public void paireTest() {
         assertEquals(joueur1.paire(), 0);
         assertEquals(joueur2.paire(), 3);
         assertEquals(joueur3.paire(), 13);
     }
 
     @Test
-    public void doublePaire() {
+    public void doublePaireTest() {
         l4 = new ArrayList<Integer>(Arrays.asList(13, 4));
         assertEquals(joueur4.doublePaire(), l4);
         assertEquals(joueur5.doublePaire(), new ArrayList<Integer>());
     }
 
     @Test
-    public void brelan() {
+    public void brelanTest() {
         assertEquals(joueur6.brelan(),13);
         assertEquals(joueur7.brelan(),5);
     }
@@ -194,7 +215,12 @@ public class JoueurTest {
         assertEquals(joueur16.full(), l16);
         assertEquals(joueur17.full(), new ArrayList<Integer>());
     }
-
+    @Test
+    public void carreTest(){
+        assertEquals(joueur18.carre(),3);
+        assertEquals(joueur19.carre(),4);
+        assertEquals(joueur20.carre(),0);
+    }
     @Test
     public void niemePhc() {
         ArrayList<Integer> a1 = new ArrayList<>();

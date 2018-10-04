@@ -69,6 +69,15 @@ public class ValeurMainTest {
     private ArrayList<Integer> liste_nbr_j17;
     private ArrayList<String> liste_col_j17;
     private Joueur joueur17;
+    private ArrayList<Integer> liste_nbr_j18;
+    private ArrayList<String> liste_col_j18;
+    private Joueur joueur18;
+    private ArrayList<Integer> liste_nbr_j19;
+    private ArrayList<String> liste_col_j19;
+    private Joueur joueur19;
+    private ArrayList<Integer> liste_nbr_j20;
+    private ArrayList<String> liste_col_j20;
+    private Joueur joueur20;
 
 
     private List<Integer> list1, list2, list3, list4,
@@ -149,6 +158,19 @@ public class ValeurMainTest {
         liste_nbr_j17 = new ArrayList<>(Arrays.asList(5, 5, 5, 6, 7));
         liste_col_j17 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
         joueur17 = creerJoueur(liste_nbr_j17, liste_col_j17);
+
+        //pour le carré
+        liste_nbr_j18 = new ArrayList<>(Arrays.asList(3, 3, 3, 3, 2));
+        liste_col_j18 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Co"));
+        joueur18 = creerJoueur(liste_nbr_j18, liste_col_j18);
+
+        liste_nbr_j19 = new ArrayList<>(Arrays.asList(4, 4, 4, 11, 4));
+        liste_col_j19 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Tr"));
+        joueur19 = creerJoueur(liste_nbr_j19, liste_col_j19);
+
+        liste_nbr_j20 = new ArrayList<>(Arrays.asList(5, 5, 5, 6, 7));
+        liste_col_j20 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
+        joueur20 = creerJoueur(liste_nbr_j20, liste_col_j20);
     }
 
     @Test
@@ -178,6 +200,10 @@ public class ValeurMainTest {
         ValeurMain vmJ15 = new ValeurMain(joueur15);
         ValeurMain vmJ16 = new ValeurMain(joueur16);
         ValeurMain vmJ17 = new ValeurMain(joueur17);
+        //carre
+        ValeurMain vmJ18 = new ValeurMain(joueur18);
+        ValeurMain vmJ19 = new ValeurMain(joueur19);
+        ValeurMain vmJ20 = new ValeurMain(joueur20);
 
         list1 = new ArrayList<Integer>(Arrays.asList(1, 9, 6, 5, 4, 2));
         assertEquals(vmJ1.getValeurMain(), list1);
@@ -187,12 +213,12 @@ public class ValeurMainTest {
         assertEquals(vmJ4.getValeurMain(), list4);
         list6 = new ArrayList<Integer>(Arrays.asList(4, 13, 0, 0, 0, 0));
         assertEquals(vmJ6.getValeurMain(), list6);
-
+        //suite
         list9 = new ArrayList<Integer>(Arrays.asList(5, 7, 0, 0, 0, 0));
         assertEquals(vmJ9.getValeurMain(), list9);
         list10 = new ArrayList<Integer>(Arrays.asList(5, 11, 0, 0, 0, 0));
         assertEquals(vmJ10.getValeurMain(), list10);
-
+        //couleur
         ArrayList<Integer> list12 = new ArrayList<Integer>(Arrays.asList(6, 7, 6, 4, 3, 2));
         assertEquals(vmJ12.getValeurMain(), list12);
         ArrayList<Integer> list13 = new ArrayList<Integer>(Arrays.asList(6, 13, 8, 7, 5, 4));
@@ -202,8 +228,11 @@ public class ValeurMainTest {
         assertEquals(vmJ15.getValeurMain(), list15);
         List<Integer> list16 = new ArrayList<>(Arrays.asList(7, 4, 11, 0, 0, 0));
         assertEquals(vmJ16.getValeurMain(), list16);
-        
-
+        //carre
+        List<Integer> list18 = new ArrayList<>(Arrays.asList(8, 3, 2, 0, 0, 0));
+        assertEquals(vmJ15.getValeurMain(), list15);
+        List<Integer> list19 = new ArrayList<>(Arrays.asList(8, 4, 11, 0, 0, 0));
+        assertEquals(vmJ16.getValeurMain(), list16);
     }
 }
 

@@ -28,17 +28,14 @@ public class Joueur {
         {
             for (Carte x:main)
             {
-                if (x.estPasEgal(y) && x.getNombre() == y.getNombre())
-                {
+                if (x.estPasEgal(y) && x.getNombre() == y.getNombre() &&
+                !res.contains(x.getNombre()))
                     res.add(x.getNombre());
-                    System.out.println("added to res -> " + x.getNombre());
-                }
             }
         }
         if (res.size() > 1) { //si on a bien trouvé deux paires
             Collections.sort(res);
             Collections.reverse(res);
-            System.out.println("res ==> " + res);
             return res;
         }
         return vide;

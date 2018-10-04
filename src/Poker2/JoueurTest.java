@@ -4,8 +4,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.lang.reflect.Array;
+import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -40,6 +42,8 @@ public class JoueurTest {
     private ArrayList<Integer> liste_nbr_j8;
     private ArrayList<String> liste_col_j8;
     private Joueur joueur8;
+
+    private List<Integer> l4;
 
     @Before
     public void initialize() {
@@ -83,7 +87,7 @@ public class JoueurTest {
 
     @Test
     public void valeur_main() {//TODO refaire ça
-        ValeurMain vtest1 = new ValeurMain(joueur2);
+        //ValeurMain vtest1 = new ValeurMain(joueur2);
         //assertEquals(vtest1.meilleur_que(joueur2.valeur_main()), 0);
     }
 
@@ -103,7 +107,9 @@ public class JoueurTest {
                         "\n  'a'        = "+a+
                         "\n  'expected' = "+expected,
                 expected.equals(a));*/
-        assertTrue(joueur4.double_paire().equals(new ArrayList<Integer>(Arrays.asList(13, 4))));
+
+        l4 = new ArrayList<Integer>(Arrays.asList(13, 4));
+        assertTrue(joueur4.double_paire().equals(l4));
         assertTrue(joueur5.double_paire().equals(new ArrayList<Integer>()));
     }
 

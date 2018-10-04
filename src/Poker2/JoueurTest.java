@@ -84,12 +84,6 @@ public class JoueurTest {
     }
 
     @Test
-    public void valeurMain() {//TODO refaire ça
-        //ValeurMain vtest1 = new ValeurMain(joueur2);
-        //assertEquals(vtest1.meilleureQue(joueur2.valeurMain()), 0);
-    }
-
-    @Test
     public void paire() {
         assertEquals(joueur1.paire(), 0);
         assertEquals(joueur2.paire(), 3);

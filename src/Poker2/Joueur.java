@@ -2,6 +2,7 @@ package Poker2;
 import java.util.*;
 
 public class Joueur {
+    private ArrayList<Carte> main = new ArrayList<>();
     public Joueur(ArrayList<Carte> paquet){
         for (int i = 0; i != 5; ++i){
             main.add(paquet.get(0));
@@ -72,5 +73,4 @@ public class Joueur {
     public ArrayList<Carte> getMain(){
         return main;
     }
-    private ArrayList<Carte> main = new ArrayList<>();
 }

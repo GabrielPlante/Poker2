@@ -206,6 +206,7 @@ public class ValeurMainTest {
         ValeurMain vmJ21 = new ValeurMain(joueur21);
 
         //vmJ1 <
+        assertEquals(vmJ1.meilleureQue(vmJ1), 0);
         assertEquals(vmJ1.meilleureQue(vmJ2), -1); //paire
         assertEquals(vmJ1.meilleureQue(vmJ4), -1); //double paire
         assertEquals(vmJ1.meilleureQue(vmJ6), -1); //brelan
@@ -214,6 +215,48 @@ public class ValeurMainTest {
         assertEquals(vmJ1.meilleureQue(vmJ15), -1);//full
         assertEquals(vmJ1.meilleureQue(vmJ18), -1);//carre
         assertEquals(vmJ1.meilleureQue(vmJ21), -1);//quinte flush
+
+        //vmJ2 <
+        assertEquals(vmJ2.meilleureQue(vmJ2), 0); //paire
+        assertEquals(vmJ2.meilleureQue(vmJ4), -1); //double paire
+        assertEquals(vmJ2.meilleureQue(vmJ6), -1); //brelan
+        assertEquals(vmJ2.meilleureQue(vmJ9), -1); //suite
+        assertEquals(vmJ2.meilleureQue(vmJ12), -1); //couleur
+        assertEquals(vmJ2.meilleureQue(vmJ15), -1); //full
+        assertEquals(vmJ2.meilleureQue(vmJ18), -1); //carre
+        assertEquals(vmJ2.meilleureQue(vmJ21), -1); //quinte flush
+
+        //vmJ3 <
+        assertEquals(vmJ4.meilleureQue(vmJ4), 0); //double paire
+        assertEquals(vmJ4.meilleureQue(vmJ6), -1); //brelan
+        assertEquals(vmJ4.meilleureQue(vmJ9), -1); //suite
+        assertEquals(vmJ4.meilleureQue(vmJ12), -1); //couleur
+        assertEquals(vmJ4.meilleureQue(vmJ15), -1); //full
+        assertEquals(vmJ4.meilleureQue(vmJ18), -1); //carre
+        assertEquals(vmJ4.meilleureQue(vmJ21), -1); //quinte flush
+
+        //vmJ6 <
+        assertEquals(vmJ6.meilleureQue(vmJ6), 0); //brelan
+        assertEquals(vmJ6.meilleureQue(vmJ9), -1); //suite
+        assertEquals(vmJ6.meilleureQue(vmJ12), -1); //couleur
+        assertEquals(vmJ6.meilleureQue(vmJ15), -1); //full
+        assertEquals(vmJ6.meilleureQue(vmJ18), -1); //carre
+        assertEquals(vmJ6.meilleureQue(vmJ21), -1); //quinte flush
+
+        //vmJ9 <
+        assertEquals(vmJ9.meilleureQue(vmJ9), 0); //suite
+        assertEquals(vmJ9.meilleureQue(vmJ12), -1); //couleur
+        assertEquals(vmJ9.meilleureQue(vmJ15), -1); //full
+        assertEquals(vmJ9.meilleureQue(vmJ18), -1); //carre
+        assertEquals(vmJ9.meilleureQue(vmJ21), -1); //quinte flush
+
+        //vmJ12 <
+        assertEquals(vmJ12.meilleureQue(vmJ12), 0); //couleur
+        assertEquals(vmJ12.meilleureQue(vmJ15), -1); //full
+        assertEquals(vmJ12.meilleureQue(vmJ18), -1); //carre
+        assertEquals(vmJ12.meilleureQue(vmJ21), -1); //quinte flush
+
+        //vmJ15
 
         /*ValeurMain main1 = new ValeurMain(2, 2, 2, 2, 2, 2);
         ValeurMain main2 = new ValeurMain(2, 2, 2, 2, 2, 1);

@@ -9,22 +9,6 @@ public class Joueur {
         }
     }
 
-    public ValeurMain valeur_main(){
-        ArrayList<Integer> x = new ArrayList<>();
-        if (brelan() !=0){
-            x.add(brelan());
-            return new ValeurMain(4, brelan(), nieme_phc(1, x), nieme_phc(2, x),0,0);
-        }
-        if (double_paire() != 0){
-            x.add(double_paire());
-            return new ValeurMain(3, double_paire(), nieme_phc(1, x), 0, 0, 0);
-        }
-        if (paire() != 0){
-            x.add(paire());
-            return new ValeurMain(2, paire(), nieme_phc(1, x), nieme_phc(2,x), nieme_phc(3,x), 0);
-        }
-        return new Poker2.ValeurMain(1, nieme_phc(1,x), nieme_phc(2,x), nieme_phc(3,x), nieme_phc(4,x), nieme_phc(5,x));
-    }
     public int paire(){
         for (Carte y:main)
         {

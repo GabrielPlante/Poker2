@@ -1,15 +1,41 @@
 package Poker2;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ValeurMain {
-    public ValeurMain(int val_princ, int val_sec, int val3, int val4, int val5, int val6){
-        valeur.add(val_princ);
-        valeur.add(val_sec);
-        valeur.add(val3);
-        valeur.add(val4);
-        valeur.add(val5);
-        valeur.add(val6);
+    public ValeurMain(Joueur joueur){
+        ArrayList<Integer> x = new ArrayList<>();
+        if (joueur.brelan() !=0){
+            x.add(joueur.brelan());
+            valeur.add(4);
+            valeur.add(joueur.brelan());
+            valeur.add(joueur.nieme_phc(2,x));
+        }
+        if (joueur.double_paire() != 0){
+            x.add(joueur.double_paire());
+            valeur.add(3);
+            valeur.add(joueur.double_paire());
+            valeur.add(joueur.nieme_phc(1,x));
+        }
+        if (joueur.paire() != 0){
+            x.add(joueur.paire());
+            valeur.add(2);
+            valeur.add(joueur.paire());
+            valeur.add(joueur.nieme_phc(1,x));
+            valeur.add(joueur.nieme_phc(2,x));
+            valeur.add(joueur.nieme_phc(3,x));
+        }
+        else{
+            valeur.add(1);
+            valeur.add(joueur.nieme_phc(1,x));
+            valeur.add(joueur.nieme_phc(2,x));
+            valeur.add(joueur.nieme_phc(3,x));
+            valeur.add(joueur.nieme_phc(4,x));
+            valeur.add(joueur.nieme_phc(5,x));
+        }
+        for (int i = valeur.size(); i < 6; ++i)
+            valeur.add(0);
     }
     public ArrayList<Integer> getValeurMain(){
         return valeur;

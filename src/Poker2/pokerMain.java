@@ -12,8 +12,8 @@ public class pokerMain {
         Joueur joueur2 = new Joueur(new Enregistreur().getPaquet());
 
         //On montre qui a gagné
-        ValeurMain j1 = joueur1.valeur_main();
-        ValeurMain j2 = joueur2.valeur_main();
+        ValeurMain j1 = new ValeurMain(joueur1);
+        ValeurMain j2 = new ValeurMain(joueur2);
         String gagnant = "La main ";
         if (j1.meilleur_que(j2) == 1) gagnant+=("1 gagne avec "+j1.combinaison()+(new Carte(j1.getValeurMain().get(1),"").valeur_to_indiceComplet()));
         else if (j1.meilleur_que(j2) == -1) gagnant+=("2 gagne avec "+j2.combinaison()+(new Carte(j2.getValeurMain().get(1),"").valeur_to_indiceComplet()));

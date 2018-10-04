@@ -1,7 +1,6 @@
 package Poker2;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ValeurMain {
     public ValeurMain(Joueur joueur){
@@ -11,29 +10,29 @@ public class ValeurMain {
             valeur.add(4);
             valeur.add(joueur.brelan());
         }
-        if (joueur.double_paire().size() == 2){
-            x.add(joueur.double_paire().get(0));
-            x.add(joueur.double_paire().get(1));
+        if (joueur.doublePaire().size() == 2){
+            x.add(joueur.doublePaire().get(0));
+            x.add(joueur.doublePaire().get(1));
             valeur.add(3);
-            valeur.add(joueur.double_paire().get(0));
-            valeur.add(joueur.double_paire().get(1));
-            valeur.add(joueur.nieme_phc(1,x));
+            valeur.add(joueur.doublePaire().get(0));
+            valeur.add(joueur.doublePaire().get(1));
+            valeur.add(joueur.niemePhc(1,x));
         }
         if (joueur.paire() != 0){
             x.add(joueur.paire());
             valeur.add(2);
             valeur.add(joueur.paire());
-            valeur.add(joueur.nieme_phc(1,x));
-            valeur.add(joueur.nieme_phc(2,x));
-            valeur.add(joueur.nieme_phc(3,x));
+            valeur.add(joueur.niemePhc(1,x));
+            valeur.add(joueur.niemePhc(2,x));
+            valeur.add(joueur.niemePhc(3,x));
         }
         else{
             valeur.add(1);
-            valeur.add(joueur.nieme_phc(1,x));
-            valeur.add(joueur.nieme_phc(2,x));
-            valeur.add(joueur.nieme_phc(3,x));
-            valeur.add(joueur.nieme_phc(4,x));
-            valeur.add(joueur.nieme_phc(5,x));
+            valeur.add(joueur.niemePhc(1,x));
+            valeur.add(joueur.niemePhc(2,x));
+            valeur.add(joueur.niemePhc(3,x));
+            valeur.add(joueur.niemePhc(4,x));
+            valeur.add(joueur.niemePhc(5,x));
         }
         while(valeur.size() < 6)
             valeur.add(0);
@@ -41,7 +40,7 @@ public class ValeurMain {
     public ArrayList<Integer> getValeurMain(){
         return valeur;
     }
-    public int meilleur_que(ValeurMain autreMain){
+    public int meilleureQue(ValeurMain autreMain){
         for (int i = 0; i!=6; ++i){
             if (getValeurMain().get(i) > autreMain.getValeurMain().get(i))
                 return 1;

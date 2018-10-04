@@ -20,7 +20,7 @@ public class Joueur {
         }
         return 0;
     }
-    public List<Integer> double_paire()
+    public List<Integer> doublePaire()
     {
         List<Integer> res = new ArrayList<Integer>();
         List<Integer> vide = new ArrayList<Integer>();
@@ -55,7 +55,7 @@ public class Joueur {
         }
         return 0;
     }
-    public int nieme_phc(int n, ArrayList<Integer> nbr_a_enlever){
+    public int niemePhc(int n, ArrayList<Integer> nbr_a_enlever){
         ArrayList<Integer> liste_temp = new ArrayList<>();//On crée une liste temporaire
         for (Carte y:main){
             boolean add = true;

@@ -13,12 +13,12 @@ public class Enregistreur {
             String sNombre = Character.toString(x.charAt(0));
             if (Character.toString(x.charAt(1)).equals("0")) sNombre = sNombre.concat("0");
             x = x.replace("0","");
-            int nombre = convertisseur_indice(sNombre);
+            int nombre = convertisseurIndice(sNombre);
             if (nombre == 0) System.exit(0);
             String couleur = x.substring(1, 3);
-            if (!bonne_couleur(couleur)) System.exit(0);
+            if (!bonneCouleur(couleur)) System.exit(0);
             Carte carte = new Carte(nombre, couleur);
-            if (check_doublons(carte)) System.exit(0);
+            if (checkDoublons(carte)) System.exit(0);
             paquet.add(carte);
         }
     }
@@ -26,7 +26,7 @@ public class Enregistreur {
     {
         paquet = paquet_brut;
     }
-    public int convertisseur_indice(String indice){
+    public int convertisseurIndice(String indice){
         int nombre = 0;
         switch (indice) {
             case "V":
@@ -54,13 +54,13 @@ public class Enregistreur {
         return nombre;
     }
 
-    public boolean check_doublons(Carte carte){
+    public boolean checkDoublons(Carte carte){
         for (Carte x:paquet)
             if (x.getNombre() == carte.getNombre() && x.getCouleur().equals(carte.getCouleur()))
                 return true;
         return false;
     }
-    public boolean bonne_couleur(String couleur){
+    public boolean bonneCouleur(String couleur){
         if (couleur.equals("Co") || couleur.equals("Pi") || couleur.equals("Ca") || couleur.equals("Tr"))
             return true;
         return false;

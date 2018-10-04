@@ -1,6 +1,4 @@
 package Poker2;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 import static java.lang.Math.max;
 
@@ -15,8 +13,8 @@ public class pokerMain {
         ValeurMain j1 = new ValeurMain(joueur1);
         ValeurMain j2 = new ValeurMain(joueur2);
         String gagnant = "La main ";
-        if (j1.meilleur_que(j2) == 1) gagnant+=("1 gagne avec "+j1.combinaison()+(new Carte(j1.getValeurMain().get(1),"").valeur_to_indiceComplet()));
-        else if (j1.meilleur_que(j2) == -1) gagnant+=("2 gagne avec "+j2.combinaison()+(new Carte(j2.getValeurMain().get(1),"").valeur_to_indiceComplet()));
+        if (j1.meilleureQue(j2) == 1) gagnant+=("1 gagne avec "+j1.combinaison()+(new Carte(j1.getValeurMain().get(1),"").valeurToIndiceComplet()));
+        else if (j1.meilleureQue(j2) == -1) gagnant+=("2 gagne avec "+j2.combinaison()+(new Carte(j2.getValeurMain().get(1),"").valeurToIndiceComplet()));
         else gagnant = "Egalite";
         System.out.println(gagnant);
    }

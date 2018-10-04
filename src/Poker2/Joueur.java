@@ -105,7 +105,21 @@ public class Joueur {
                     }
         return res;
     }
-
+    public int carre()//On teste chaque nombre s'il est 4 fois dans la main
+    {
+        for (int n = 1; n!= 14; ++n)
+        {
+            int nombreOccurence = 0;
+            for (Carte x:main)
+            {
+                if (x.getNombre() == n)
+                    ++nombreOccurence;
+            }
+            if (nombreOccurence == 4)
+                return n;
+        }
+        return 0;
+    }
     public int niemePhc(int n, ArrayList<Integer> nbr_a_enlever){
         ArrayList<Integer> liste_temp = new ArrayList<>();//On crée une liste temporaire
         for (Carte y:main){

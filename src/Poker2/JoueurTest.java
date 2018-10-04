@@ -37,9 +37,10 @@ public class JoueurTest {
     private ArrayList<Integer> liste_nbr_j7;
     private ArrayList<String> liste_col_j7;
     private Joueur joueur7;
-    private ArrayList<Integer> liste_nbr_jx;
-    private ArrayList<String> liste_col_jx;
-    private Joueur joueurx;
+    private ArrayList<Integer> liste_nbr_j8;
+    private ArrayList<String> liste_col_j8;
+    private Joueur joueur8;
+
     @Before
     public void initialize() {
         ArrayList<Integer> liste_nbr_j1 = new ArrayList<>(Arrays.asList(2, 9, 4, 5, 6));
@@ -67,7 +68,7 @@ public class JoueurTest {
         joueur5 = creer_joueur(liste_nbr_j5, liste_col_j5);
 
 
-        liste_nbr_j6 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
+        liste_nbr_j6 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 13));
         liste_col_j6 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
         joueur6 = creer_joueur(liste_nbr_j6, liste_col_j6);
 
@@ -75,9 +76,9 @@ public class JoueurTest {
         liste_col_j7 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
         joueur7 = creer_joueur(liste_nbr_j7, liste_col_j7);
 
-        liste_nbr_jx = new ArrayList<>(Arrays.asList(14, 3, 14, 14, 11));
-        liste_col_jx = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
-        joueurx = creer_joueur(liste_nbr_jx, liste_col_jx);
+        liste_nbr_j8 = new ArrayList<>(Arrays.asList(14, 3, 14, 14, 11));
+        liste_col_j8 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
+        joueur8 = creer_joueur(liste_nbr_j8, liste_col_j8);
     }
 
     @Test
@@ -100,8 +101,8 @@ public class JoueurTest {
     }
     @Test
     public void brelan() {
-        assertEquals(joueur6.brelan(),5);
-        assertEquals(joueur7.brelan(),14);
+        assertEquals(joueur6.brelan(),13);
+        assertEquals(joueur7.brelan(),5);
     }
 
     @Test
@@ -110,8 +111,9 @@ public class JoueurTest {
         a1.add(3);
         ArrayList<Integer> a2 = new ArrayList<>();
         ArrayList<Integer> a3 = new ArrayList<>();
-        a3.add(8);
-        assertEquals(joueurx.nieme_phc(1, a1), 11);
+        a3.add(14);
+
+        assertEquals(joueur8.nieme_phc(1, a3), 11);
         assertEquals(joueur2.nieme_phc(1,a1),10);
         assertEquals(joueur2.nieme_phc(5,a1),0);
         assertEquals(joueur2.nieme_phc(4,a1),0);

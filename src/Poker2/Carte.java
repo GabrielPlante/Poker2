@@ -1,6 +1,5 @@
 package Poker2;
 
-import sun.font.TrueTypeFont;
 
 public class Carte {
     public Carte(int a, String b)

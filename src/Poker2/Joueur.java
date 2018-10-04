@@ -35,8 +35,7 @@ public class Joueur {
             }
         }
         if (res.size() > 1) { //si on a bien trouvé deux paires
-            Collections.sort(res);
-            Collections.reverse(res);
+            if(res.get(0)>res.get(1)) Collections.reverse(res);
             return res;
         }
         return vide;

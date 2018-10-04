@@ -49,6 +49,16 @@ public class JoueurTest {
     private ArrayList<Integer> liste_nbr_j11;
     private ArrayList<String> liste_col_j11;
     private Joueur joueur11;
+    private ArrayList<Integer> liste_nbr_j12;
+    private ArrayList<String> liste_col_j12;
+    private Joueur joueur12;
+    private ArrayList<Integer> liste_nbr_j13;
+    private ArrayList<String> liste_col_j13;
+    private Joueur joueur13;
+    private ArrayList<Integer> liste_nbr_j14;
+    private ArrayList<String> liste_col_j14;
+    private Joueur joueur14;
+
 
     private List<Integer> l4;
 
@@ -102,6 +112,18 @@ public class JoueurTest {
         liste_nbr_j11 = new ArrayList<>(Arrays.asList(2, 3, 4, 6, 7));
         liste_col_j11 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
         joueur11 = creerJoueur(liste_nbr_j11, liste_col_j11);
+
+        liste_nbr_j12 = new ArrayList<>(Arrays.asList(2, 3, 4, 6, 7));
+        liste_col_j12 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+        joueur12 = creerJoueur(liste_nbr_j12, liste_col_j12);
+
+        liste_nbr_j13 = new ArrayList<>(Arrays.asList(13, 5, 4, 8, 7));
+        liste_col_j13 = new ArrayList<>(Arrays.asList("Co", "Co", "Co", "Co", "Co"));
+        joueur13 = creerJoueur(liste_nbr_j13, liste_col_j13);
+
+        liste_nbr_j14 = new ArrayList<>(Arrays.asList(10, 3, 4, 6, 7));
+        liste_col_j14 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
+        joueur14 = creerJoueur(liste_nbr_j14, liste_col_j14);
     }
 
     @Test
@@ -130,6 +152,16 @@ public class JoueurTest {
         assertEquals(joueur9.suite(),7);
         assertEquals(joueur10.suite(),11);
         assertEquals(joueur11.suite(),0);
+    }
+
+    @Test
+    public void couleurTest(){
+        List<Integer> l12 = new ArrayList<>(Arrays.asList(7, 6, 4, 3, 2));
+        List<Integer> l13 = new ArrayList<>(Arrays.asList(13, 8, 7, 5, 4));
+
+        assertEquals(joueur12.couleur(), l12);
+        assertEquals(joueur13.couleur(), l13);
+        assertEquals(joueur14.couleur(), new ArrayList<Integer>());
     }
 
     @Test

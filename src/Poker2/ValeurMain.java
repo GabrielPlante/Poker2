@@ -3,9 +3,13 @@ package Poker2;
 import java.util.ArrayList;
 
 public class ValeurMain {
-    public ValeurMain(Joueur joueur){
+    public ValeurMain(Joueur joueur) {
         ArrayList<Integer> x = new ArrayList<>();
-        if (joueur.suite() !=0){
+        if (joueur.couleur().size() > 0) {
+            valeur.add(6);
+            for (Integer n: joueur.couleur())
+                valeur.add(n);
+        }else if (joueur.suite() !=0){
             x.add(joueur.suite());
             valeur.add(5);
             valeur.add(joueur.suite());

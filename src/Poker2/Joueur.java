@@ -3,6 +3,7 @@ import java.util.*;
 
 public class Joueur {
     private ArrayList<Carte> main = new ArrayList<>();
+    public ArrayList<Carte> getMain(){ return main;}
     public Joueur(ArrayList<Carte> paquet){
         for (int i = 0; i != 5; ++i){
             main.add(paquet.get(0));
@@ -72,7 +73,26 @@ public class Joueur {
         if (carteAdjacente == 4) return min+4;
         return 0;
     }
-        public int niemePhc(int n, ArrayList<Integer> nbr_a_enlever){
+    public List<Integer> couleur()//On teste si la couleur de chaque carte est la meme que la couleur de la carte suivante
+    {
+        ArrayList<Integer> res = new ArrayList<Integer>();
+        int i;
+        for (i = 0; i!=main.size()-1;++i)
+        {
+            if (!main.get(i).estMemeCouleur(main.get(i+1))){
+                break;
+            }
+        }
+        if (i == main.size() - 1){
+            for (Carte c: main)
+                res.add(c.getNombre());
+            Collections.sort(res);
+            Collections.reverse(res);
+        }
+        return res;
+    }
+
+    public int niemePhc(int n, ArrayList<Integer> nbr_a_enlever){
         ArrayList<Integer> liste_temp = new ArrayList<>();//On crée une liste temporaire
         for (Carte y:main){
             boolean add = true;
@@ -85,8 +105,5 @@ public class Joueur {
             return 0;
         Collections.sort(liste_temp);//On trie la liste
         return liste_temp.get(liste_temp.size()-n);
-    }
-    public ArrayList<Carte> getMain(){
-        return main;
     }
 }

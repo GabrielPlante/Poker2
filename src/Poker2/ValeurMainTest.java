@@ -51,6 +51,15 @@ public class ValeurMainTest {
     private ArrayList<Integer> liste_nbr_j11;
     private ArrayList<String> liste_col_j11;
     private Joueur joueur11;
+    private ArrayList<Integer> liste_nbr_j12;
+    private ArrayList<String> liste_col_j12;
+    private Joueur joueur12;
+    private ArrayList<Integer> liste_nbr_j13;
+    private ArrayList<String> liste_col_j13;
+    private Joueur joueur13;
+    private ArrayList<Integer> liste_nbr_j14;
+    private ArrayList<String> liste_col_j14;
+    private Joueur joueur14;
 
 
     private List<Integer> list1, list2, list3, list4,
@@ -106,6 +115,18 @@ public class ValeurMainTest {
         liste_nbr_j11 = new ArrayList<>(Arrays.asList(2, 3, 4, 6, 7));
         liste_col_j11 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
         joueur11 = creerJoueur(liste_nbr_j11, liste_col_j11);
+
+        liste_nbr_j12 = new ArrayList<>(Arrays.asList(2, 3, 4, 6, 7));
+        liste_col_j12 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+        joueur12 = creerJoueur(liste_nbr_j12, liste_col_j12);
+
+        liste_nbr_j13 = new ArrayList<>(Arrays.asList(13, 5, 4, 8, 7));
+        liste_col_j13 = new ArrayList<>(Arrays.asList("Co", "Co", "Co", "Co", "Co"));
+        joueur13 = creerJoueur(liste_nbr_j13, liste_col_j13);
+
+        liste_nbr_j14 = new ArrayList<>(Arrays.asList(10, 3, 4, 6, 7));
+        liste_col_j14 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
+        joueur14 = creerJoueur(liste_nbr_j14, liste_col_j14);
     }
 
     @Test
@@ -129,6 +150,9 @@ public class ValeurMainTest {
         ValeurMain vmJ9 = new ValeurMain(joueur9);
         ValeurMain vmJ10 = new ValeurMain(joueur10);
 
+        ValeurMain vmJ12 = new ValeurMain(joueur12);
+        ValeurMain vmJ13 = new ValeurMain(joueur13);
+
         list1 = new ArrayList<Integer>(Arrays.asList(1, 9, 6, 5, 4, 2));
         assertEquals(vmJ1.getValeurMain(), list1);
         list2 = new ArrayList<Integer>(Arrays.asList(2, 3, 10, 8, 7, 0));
@@ -137,10 +161,16 @@ public class ValeurMainTest {
         assertEquals(vmJ4.getValeurMain(), list4);
         list6 = new ArrayList<Integer>(Arrays.asList(4, 13, 0, 0, 0, 0));
         assertEquals(vmJ6.getValeurMain(), list6);
+
         list9 = new ArrayList<Integer>(Arrays.asList(5, 7, 0, 0, 0, 0));
         assertEquals(vmJ9.getValeurMain(), list9);
         list10 = new ArrayList<Integer>(Arrays.asList(5, 11, 0, 0, 0, 0));
         assertEquals(vmJ10.getValeurMain(), list10);
+
+        ArrayList<Integer> list12 = new ArrayList<Integer>(Arrays.asList(6, 7, 6, 4, 3, 2));
+        assertEquals(vmJ12.getValeurMain(), list12);
+        ArrayList<Integer> list13 = new ArrayList<Integer>(Arrays.asList(6, 13, 8, 7, 5, 4));
+        assertEquals(vmJ13.getValeurMain(), list13);
 
     }
 }

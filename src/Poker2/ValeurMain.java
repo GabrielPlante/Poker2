@@ -5,7 +5,11 @@ import java.util.ArrayList;
 public class ValeurMain {
     public ValeurMain(Joueur joueur){
         ArrayList<Integer> x = new ArrayList<>();
-        if (joueur.brelan() !=0){
+        if (joueur.suite() !=0){
+            x.add(joueur.suite());
+            valeur.add(5);
+            valeur.add(joueur.suite());
+        }else if (joueur.brelan() !=0){
             x.add(joueur.brelan());
             valeur.add(4);
             valeur.add(joueur.brelan());

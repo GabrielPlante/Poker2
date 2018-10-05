@@ -547,8 +547,8 @@ public class ValeurMainTest {
         //carre
         List<Integer> list18 = new ArrayList<>(Arrays.asList(8, 3, 2, 0, 0, 0));
         List<Integer> list19 = new ArrayList<>(Arrays.asList(8, 4, 11, 0, 0, 0));
-        assertEquals(vmJ15.getValeurMain(), list15);
-        assertEquals(vmJ16.getValeurMain(), list16);
+        assertEquals(vmJ18.getValeurMain(), list18);
+        assertEquals(vmJ19.getValeurMain(), list19);
         //quinte flush
         List<Integer> list21 = new ArrayList<>(Arrays.asList(9, 8, 0, 0, 0, 0));
         List<Integer> list22 = new ArrayList<>(Arrays.asList(9, 13, 0, 0, 0, 0));

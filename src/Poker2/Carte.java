@@ -38,6 +38,21 @@ public class Carte {
     }
 
     @Override
+    public boolean equals(Object s2){
+        //nécessaire pour tests avec
+        // assertEquals(ArrayList<Carte>, ArrayList<Carte>
+        if(this == s2){
+            return true;
+        }
+        if(s2 instanceof Carte){
+            Carte other = (Carte) s2;
+            return (this.nombre == other.getNombre() &&
+                    this.couleur.equals(other.couleur));
+        }
+        return false;
+    }
+
+    @Override
     public String toString() {
         return nombre + couleur;
     }

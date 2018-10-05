@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Enregistreur {
+    private ArrayList<Carte> paquet = new ArrayList<Carte>();
+    public ArrayList<Carte> getPaquet(){
+        return paquet;
+    }
     public Enregistreur()
     {
         Scanner entree = new Scanner(System.in);
@@ -16,12 +20,12 @@ public class Enregistreur {
             if (Character.toString(x.charAt(1)).equals("0")) sNombre = sNombre.concat("0");//Gestion du 10, seulle cartes prenant 2 caractères pour l'indice
             x = x.replace("0","");
             int nombre = convertisseurIndice(sNombre);
-            if (nombre == 0) System.exit(0);
+            if (nombre == 0) System.exit(-1);
             String couleur = x.substring(1, 3);
             couleur = couleur.substring(0,1).toUpperCase()+couleur.substring(1).toLowerCase();
-            if (!bonneCouleur(couleur)) System.exit(0);
+            if (!bonneCouleur(couleur)) System.exit(-2);
             Carte carte = new Carte(nombre, couleur);
-            if (checkDoublons(carte)) System.exit(0);
+            if (checkDoublons(carte)) System.exit(-3);
             paquet.add(carte);
         }
     }
@@ -68,10 +72,8 @@ public class Enregistreur {
             return true;
         return false;
     }
-
-    public ArrayList<Carte> getPaquet(){
-        return paquet;
+    public void printPaquet(){ //pour tests
+        for (Carte c: paquet)
+            System.out.println(c.getNombre() + c.getCouleur() + " ");
     }
-
-    private ArrayList<Carte> paquet = new ArrayList<Carte>();
 }

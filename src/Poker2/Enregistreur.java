@@ -21,30 +21,22 @@ public class Enregistreur {
             x = x.replace("0","");
             int nombre = convertisseurIndice(sNombre);
 
-            if (nombre == 0){
-                System.out.println("La saisie de la valeur d'au moins une carte n'a pas été reconnue\nRappel: utiliser des entiers de 2 à 10 et {V,D,R,A}");
-                System.exit(-1);
-            }
+            if (nombre == 0)
+                throw new RuntimeException("La saisie de la valeur d'au moins une carte n'a pas été reconnue\nRappel: utiliser des entiers de 2 à 10 et {V,D,R,A}");
             String couleur = x.substring(1, 3);
             couleur = couleur.substring(0,1).toUpperCase()+couleur.substring(1).toLowerCase();
-            if (!bonneCouleur(couleur)){
-                System.out.println("La saisie de la famille d'au moins une carte n'a pas été reconnue\nRappel: utiliser {Pi,Co,Tr,Ca}");
-                System.exit(-2);
-            }
+            if (!bonneCouleur(couleur))
+                throw new RuntimeException("La saisie de la famille d'au moins une carte n'a pas été reconnue\nRappel: utiliser {Pi,Co,Tr,Ca}");
             Carte carte = new Carte(nombre, couleur);
-            if (checkDoublons(carte)) {
-                System.out.println("Une carte au moins a été utilisée plusieurs fois");
-                System.exit(-3);
-            }
+            if (checkDoublons(carte))
+                throw  new RuntimeException("Une carte au moins a été utilisée plusieurs fois");
 
             paquet.add(carte);
         }
         if (paquet.size()>5){
-            System.out.println("La main est trop grande, une main se compose de 5 cartes");
-            System.exit(0);
+            throw new RuntimeException("La main est trop grande, une main se compose de 5 cartes");
         } else if (paquet.size()<5){
-        System.out.println("La main est trop petite, une main se compose de 5 cartes");
-        System.exit(0);
+        throw new RuntimeException("La main est trop petite, une main se compose de 5 cartes");
         }
     }
     public Enregistreur(ArrayList<Carte> paquet_brut)//Pour les tests uniquements

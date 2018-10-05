@@ -33,6 +33,13 @@ public class Enregistreur {
             }
             paquet.add(carte);
         }
+        if (paquet.size()>5){
+            System.out.println("La main est trop grande, une main se compose de 5 cartes");
+            System.exit(0);
+        } else if (paquet.size()<5){
+        System.out.println("La main est trop petite, une main se compose de 5 cartes");
+        System.exit(0);
+        }
     }
     public Enregistreur(ArrayList<Carte> paquet_brut)//Pour les tests uniquements
     {

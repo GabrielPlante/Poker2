@@ -380,17 +380,17 @@ public class ValeurMainTest {
 
 
 
-        listeNombreJTestSensible19 = new ArrayList<>(Arrays.asList(2, 2, 2, 6, 7));
-        listeCoulJTestSensible19 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Tr", "Co"));
+        listeNombreJTestSensible19 = new ArrayList<>(Arrays.asList(2, 3, 8, 6, 7));
+        listeCoulJTestSensible19 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
         joueurTestSensible19 = creerJoueur(listeNombreJTestSensible19, listeCoulJTestSensible19);
 
-        listeNombreJTestSensible20 = new ArrayList<>(Arrays.asList(13, 13, 12, 12, 11));
+        listeNombreJTestSensible20 = new ArrayList<>(Arrays.asList(9, 10, 13, 12, 11));
         listeCoulJTestSensible20 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Tr", "Co"));
         joueurTestSensible20 = creerJoueur(listeNombreJTestSensible20, listeCoulJTestSensible20);
     }
 
     @Test
-    public void meilleurQueTest() {//TODO refaire ça
+    public void meilleurQueTest() {
         ValeurMain vmJ1 = new ValeurMain(joueur1);
         ValeurMain vmJ2 = new ValeurMain(joueur2);
         ValeurMain vmJ4 = new ValeurMain(joueur4);

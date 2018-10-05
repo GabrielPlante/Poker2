@@ -73,21 +73,18 @@ public class Joueur {
         if (carteAdjacente == 4) return min+4;
         return 0;
     }
-    public List<Integer> couleur()//On teste si la couleur de chaque carte est la meme que la couleur de la carte suivante
+    public List<Integer> couleur()//On regarde si la couleur des 4 dernières cartes est la même que la dernière
     {
         ArrayList<Integer> res = new ArrayList<Integer>();
-        int i;
-        for (i = 0; i!=main.size()-1;++i)
-        {
-            if (!main.get(i).estMemeCouleur(main.get(i+1))){
-                break;
+        String couleurReference = main.get(0).getCouleur();
+        for (int i=1; i < main.size(); i++){
+            if (!(main.get(i).getCouleur().equals(couleurReference))) break;
+            if (i == main.size()-1){
+                for (Carte c: main)
+                    res.add(c.getNombre());
+                Collections.sort(res);
+                Collections.reverse(res);
             }
-        }
-        if (i == main.size() - 1){
-            for (Carte c: main)
-                res.add(c.getNombre());
-            Collections.sort(res);
-            Collections.reverse(res);
         }
         return res;
     }

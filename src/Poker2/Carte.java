@@ -22,12 +22,12 @@ public class Carte {
     }
 
     public boolean estPasMemeCarte(Carte c2){
-        if (this.couleur == c2.getCouleur() && this.nombre == c2.getNombre())
+        if (this.couleur.equals(c2.getCouleur()) && this.nombre == c2.getNombre())
             return false;
         return true;
     }
     public boolean estMemeCouleur(Carte c2){
-        if (this.couleur == c2.getCouleur())
+        if (this.couleur.equals(c2.getCouleur()))
             return true;
         return false;
     }

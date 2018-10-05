@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Enregistreur {
+    private ArrayList<Carte> paquet = new ArrayList<Carte>();
+    public ArrayList<Carte> getPaquet(){
+        return paquet;
+    }
     public Enregistreur()
     {
         Scanner entree = new Scanner(System.in);
@@ -16,21 +20,23 @@ public class Enregistreur {
             if (Character.toString(x.charAt(1)).equals("0")) sNombre = sNombre.concat("0");//Gestion du 10, seulle cartes prenant 2 caractères pour l'indice
             x = x.replace("0","");
             int nombre = convertisseurIndice(sNombre);
+
             if (nombre == 0){
                 System.out.println("La saisie de la valeur d'au moins une carte n'a pas été reconnue\nRappel: utiliser des entiers de 2 à 10 et {V,D,R,A}");
-                System.exit(0);
+                System.exit(-1);
             }
             String couleur = x.substring(1, 3);
             couleur = couleur.substring(0,1).toUpperCase()+couleur.substring(1).toLowerCase();
             if (!bonneCouleur(couleur)){
                 System.out.println("La saisie de la famille d'au moins une carte n'a pas été reconnue\nRappel: utiliser {Pi,Co,Tr,Ca}");
-                System.exit(0);
+                System.exit(-2);
             }
             Carte carte = new Carte(nombre, couleur);
             if (checkDoublons(carte)) {
                 System.out.println("Une carte au moins a été utilisée plusieurs fois");
-                System.exit(0);
+                System.exit(-3);
             }
+
             paquet.add(carte);
         }
         if (paquet.size()>5){
@@ -84,10 +90,8 @@ public class Enregistreur {
             return true;
         return false;
     }
-
-    public ArrayList<Carte> getPaquet(){
-        return paquet;
+    public void printPaquet(){ //pour tests
+        for (Carte c: paquet)
+            System.out.println(c.getNombre() + c.getCouleur() + " ");
     }
-
-    private ArrayList<Carte> paquet = new ArrayList<Carte>();
 }

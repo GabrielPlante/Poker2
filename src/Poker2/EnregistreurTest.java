@@ -1,8 +1,8 @@
 package Poker2;
 
-import org.junit.Rule;
 import org.junit.Test;
-//import org.junit.contrib.java.lang.system.ExpectedSystemExit;
+import static org.assertj.core.api.Assertions.*;
+
 
 import java.io.InputStream;
 import java.io.ByteArrayInputStream;
@@ -38,9 +38,86 @@ public class EnregistreurTest {
     private List<String> liste_col_2;
     private List<Carte> dummy;
 
-    @Rule
-    //public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
+    @Test
+    public void checkDoublonsTestGlobal1() {
+        String data1 = "2Pi 2Pi APi VPi RPi";
+        Throwable thrown = catchThrowable(() ->
+            { dummy = runEnregistreur(data1); });
+        assertThat(thrown).isInstanceOf(RuntimeException.class)
+                .hasMessage("Une carte au moins a été utilisée plusieurs fois");
+    }
+
+    @Test
+    public void checkDoublonsTestGlobal2(){
+        String data1 = "2Pi 2Pi 2Pi VPi RPi";
+        Throwable thrown = catchThrowable(() ->
+        { dummy = runEnregistreur(data1); });
+        assertThat(thrown).isInstanceOf(RuntimeException.class)
+                .hasMessage("Une carte au moins a été utilisée plusieurs fois");
+    }
+
+     @Test
+     public void checkExtraireCouleur1(){
+         String data1 = "2He 2Pi APi VPi RPi";
+         Throwable thrown = catchThrowable(() ->
+         { dummy = runEnregistreur(data1); });
+         assertThat(thrown).isInstanceOf(RuntimeException.class)
+                 .hasMessage("La saisie de la famille d'au moins une carte n'a pas été reconnue\nRappel: utiliser {Pi,Co,Tr,Ca}");
+     }
+
+     @Test
+     public void checkExtraireCouleur2(){
+         String data1 = "2Br 2Pi APi VHe RPi";
+         Throwable thrown = catchThrowable(() ->
+         { dummy = runEnregistreur(data1); });
+         assertThat(thrown).isInstanceOf(RuntimeException.class)
+                 .hasMessage("La saisie de la famille d'au moins une carte n'a pas été reconnue\nRappel: utiliser {Pi,Co,Tr,Ca}");
+     }
+
+     @Test
+     public void checkExtraireCouleur3(){
+         String data1 = "47Pi 2Co APi VPi RPi";
+         Throwable thrown = catchThrowable(() ->
+         { dummy = runEnregistreur(data1); });
+         assertThat(thrown).isInstanceOf(RuntimeException.class)
+                 .hasMessage("La saisie de la famille d'au moins une carte n'a pas été reconnue\nRappel: utiliser {Pi,Co,Tr,Ca}");
+     }
+    @Test
+    public void checkExtraireCouleur4(){
+        String data1 = "22Pi 2Co APi VPi RPi";
+        Throwable thrown = catchThrowable(() ->
+        { dummy = runEnregistreur(data1); });
+        assertThat(thrown).isInstanceOf(RuntimeException.class)
+                .hasMessage("La saisie de la famille d'au moins une carte n'a pas été reconnue\nRappel: utiliser {Pi,Co,Tr,Ca}");
+    }
+
+
+
+    @Test
+    public void checkConvertisseurIndice1(){
+        String data1 = "MPi 2Co APi VCa RPi";
+        Throwable thrown = catchThrowable(() ->
+        { dummy = runEnregistreur(data1); });
+        assertThat(thrown).isInstanceOf(RuntimeException.class)
+                .hasMessage("La saisie de la valeur d'au moins une carte n'a pas été reconnue\nRappel: utiliser des entiers de 2 à 10 et {V,D,R,A}");
+    }
+    @Test
+    public void checkConvertisseurIndice2(){
+        String data1 = "ZPi 2Co APi VPi RPi";
+        Throwable thrown = catchThrowable(() ->
+        { dummy = runEnregistreur(data1); });
+        assertThat(thrown).isInstanceOf(RuntimeException.class)
+                .hasMessage("La saisie de la valeur d'au moins une carte n'a pas été reconnue\nRappel: utiliser des entiers de 2 à 10 et {V,D,R,A}");
+    }
+    @Test
+    public void checkConvertisseurIndice3(){
+        String data1 = "ZlPi 2Co APi VPi RPi";
+        Throwable thrown = catchThrowable(() ->
+        { dummy = runEnregistreur(data1); });
+        assertThat(thrown).isInstanceOf(RuntimeException.class)
+                .hasMessage("La saisie de la valeur d'au moins une carte n'a pas été reconnue\nRappel: utiliser des entiers de 2 à 10 et {V,D,R,A}");
+    }
     @Test
     public void testEnregistrer() throws Exception
     {
@@ -48,65 +125,8 @@ public class EnregistreurTest {
         liste_nbr_2 = new ArrayList<>(Arrays.asList(1, 1, 13, 10, 12));
         liste_col_2 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Pi", "Pi"));
         assertEquals(runEnregistreur(data2), creerPaquet(liste_nbr_2, liste_col_2));
-
         //dummy = runEnregistreur(data4);
     }
-
-    @Test
-    public void exitsWithStatusCodeN3One() {
-        String data1 = "2Pi 2Pi APi VPi RPi";
-        //exit.expectSystemExitWithStatus(-3);
-        dummy = runEnregistreur(data1);
-    }
-    @Test
-    public void exitsWithStatusCodeN3Two() {
-        String data1 = "2Pi 2Pi 2Pi VPi RPi";
-        //exit.expectSystemExitWithStatus(-3);
-        dummy = runEnregistreur(data1);
-    }
-    @Test
-    public void exitsWithStatusCodeN2One() {
-        //exit.expectSystemExitWithStatus(-2);
-        String data2 = "2He 2Pi APi VPi RPi";
-        dummy = runEnregistreur(data2);
-    }
-    @Test
-    public void exitsWithStatusCodeN2Two() {
-        //exit.expectSystemExitWithStatus(-2);
-        String data2 = "2Br 2Pi APi VHe RPi";
-        dummy = runEnregistreur(data2);
-    }
-    @Test
-    public void exitsWithStatusCodeN2Three() {
-        //exit.expectSystemExitWithStatus(-2);
-        String data2 = "47Pi 2Co APi VPi RPi";
-        dummy = runEnregistreur(data2);
-    }
-    @Test
-    public void exitsWithStatusCodeN2Four() {
-        //exit.expectSystemExitWithStatus(-2);
-        String data2 = "22Pi 2Co APi VPi RPi";
-        dummy = runEnregistreur(data2);
-    }
-    @Test
-    public void exitsWithStatusCodeN1One() {
-        //exit.expectSystemExitWithStatus(-1);
-        String data2 = "MPi 2Co APi VCa RPi";
-        dummy = runEnregistreur(data2);
-    }
-    @Test
-    public void exitsWithStatusCodeN1Two() {
-        //exit.expectSystemExitWithStatus(-1);
-        String data2 = "ZPi 2Co APi VPi RPi";
-        dummy = runEnregistreur(data2);
-    }
-    @Test
-    public void exitsWithStatusCodeN1Three() {
-        //exit.expectSystemExitWithStatus(-1);
-        String data2 = "ZlPi 2Co APi VPi RPi";
-        dummy = runEnregistreur(data2);
-    }
-
     @Test
     public void convertisseurIndice() {
         ArrayList<Carte> paquet1 = new ArrayList<>();
@@ -116,16 +136,30 @@ public class EnregistreurTest {
 
         assertEquals(paquet.convertisseurIndice("4"),3);
         assertEquals(paquet.convertisseurIndice("D"), 11);
-        assertEquals(paquet.convertisseurIndice("Z"), 0);
     }
-
     @Test
-    public void checkDoublons() {
+    public void checkConvertisseurIndice4(){
         ArrayList<Carte> paquet1 = new ArrayList<>();
         for (int i = 0; i != 10; ++i)
             paquet1.add(new Carte(i+1, "Pi"));
         Enregistreur paquet = new Enregistreur(paquet1);
+
+        Throwable thrown = catchThrowable(() ->
+        { assertEquals(paquet.convertisseurIndice("Z"), 0);
+        });
+        assertThat(thrown).isInstanceOf(RuntimeException.class)
+                .hasMessage("La saisie de la valeur d'au moins une carte n'a pas été reconnue\nRappel: utiliser des entiers de 2 à 10 et {V,D,R,A}");
+    }
+
+    @Test
+    public void checkDoublonsTest() {
+        ArrayList<Carte> paquet1 = new ArrayList<>();
+        for (int i = 1; i < 14; ++i)
+            paquet1.add(new Carte(i, "Pi"));
+        Enregistreur paquet = new Enregistreur(paquet1);
         assertEquals(paquet.checkDoublons(new Carte(4, "Pi")), true);
         assertEquals(paquet.checkDoublons(new Carte(15, "Pi")), false);
+        assertEquals(paquet.checkDoublons(new Carte(5, "Pi")), true);
+        assertEquals(paquet.checkDoublons(new Carte(25, "Pi")), false);
     }
 }

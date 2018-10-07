@@ -19,8 +19,8 @@ public class ValeurMainTest {
         return new Joueur(liste_carte);
     }
 
-
     //@Before
+    // On déclare et affecte les variables en même temps pour limiter le nombre de lignes, d'où le @Before qui est mis en commentaires
     // 3 joueurs par combinaisons, l'indice d'un joueur indique son classement par rapport aux autres: Jx bats Jy si x>y
 
     //hauteur ------------------------------------------------------------------------------------------------------

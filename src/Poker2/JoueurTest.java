@@ -17,254 +17,244 @@ public class JoueurTest {
         return new Joueur(liste_carte);
     }
 
-    private ArrayList<String> liste_col_j1;
-    private Joueur joueur1;
-    private ArrayList<Integer> liste_nbr_j2;
-    private ArrayList<String> liste_col_j2;
-    private Joueur joueur2;
-    private ArrayList<Integer> liste_nbr_j3;
-    private ArrayList<String> liste_col_j3;
-    private Joueur joueur3;
-    private ArrayList<Integer> liste_nbr_j4;
-    private ArrayList<String> liste_col_j4;
-    private Joueur joueur4;
-    private ArrayList<Integer> liste_nbr_j5;
-    private ArrayList<String> liste_col_j5;
-    private Joueur joueur5;
-    private ArrayList<Integer> liste_nbr_j6;
-    private ArrayList<String> liste_col_j6;
-    private Joueur joueur6;
-    private ArrayList<Integer> liste_nbr_j7;
-    private ArrayList<String> liste_col_j7;
-    private Joueur joueur7;
-    private ArrayList<Integer> liste_nbr_j8;
-    private ArrayList<String> liste_col_j8;
-    private Joueur joueur8;
-    private ArrayList<Integer> liste_nbr_j9;
-    private ArrayList<String> liste_col_j9;
-    private Joueur joueur9;
-    private ArrayList<Integer> liste_nbr_j10;
-    private ArrayList<String> liste_col_j10;
-    private Joueur joueur10;
-    private ArrayList<Integer> liste_nbr_j11;
-    private ArrayList<String> liste_col_j11;
-    private Joueur joueur11;
-    private ArrayList<Integer> liste_nbr_j12;
-    private ArrayList<String> liste_col_j12;
-    private Joueur joueur12;
-    private ArrayList<Integer> liste_nbr_j13;
-    private ArrayList<String> liste_col_j13;
-    private Joueur joueur13;
-    private ArrayList<Integer> liste_nbr_j14;
-    private ArrayList<String> liste_col_j14;
-    private Joueur joueur14;
-    private ArrayList<Integer> liste_nbr_j15;
-    private ArrayList<String> liste_col_j15;
-    private Joueur joueur15;
-    private ArrayList<Integer> liste_nbr_j16;
-    private ArrayList<String> liste_col_j16;
-    private Joueur joueur16;
-    private ArrayList<Integer> liste_nbr_j17;
-    private ArrayList<String> liste_col_j17;
-    private Joueur joueur17;
-    private ArrayList<Integer> liste_nbr_j18;
-    private ArrayList<String> liste_col_j18;
-    private Joueur joueur18;
-    private ArrayList<Integer> liste_nbr_j19;
-    private ArrayList<String> liste_col_j19;
-    private Joueur joueur19;
-    private ArrayList<Integer> liste_nbr_j20;
-    private ArrayList<String> liste_col_j20;
-    private Joueur joueur20;
-    private ArrayList<Integer> liste_nbr_j21;
-    private ArrayList<String> liste_col_j21;
-    private Joueur joueur21;
-    private ArrayList<Integer> liste_nbr_j22;
-    private ArrayList<String> liste_col_j22;
-    private Joueur joueur22;
-    private ArrayList<Integer> liste_nbr_j23;
-    private ArrayList<String> liste_col_j23;
-    private Joueur joueur23;
+    //@Before
+    // 3 joueurs par combinaisons, l'indice d'un joueur indique son classement par rapport aux autres: Jx bats Jy si x>y
 
+    //hauteur ------------------------------------------------------------------------------------------------------
 
-    private List<Integer> l4;
+    //9
+    private ArrayList<Integer> J1ValeurCarte = new ArrayList<>(Arrays.asList(3, 4, 7, 8, 9));
+    private ArrayList<String> J1FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J1 = creerJoueur(J1ValeurCarte, J1FamilleCarte);
 
-    @Before
-    public void initialize() {
-        ArrayList<Integer> liste_nbr_j1 = new ArrayList<>(Arrays.asList(2, 9, 4, 5, 6));
-        liste_col_j1 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Pi", "Pi"));
-        joueur1 = creerJoueur(liste_nbr_j1, liste_col_j1);
+    //Roi (12)
+    private ArrayList<Integer> J2ValeurCarte = new ArrayList<>(Arrays.asList(12, 3, 5, 9, 2));
+    private ArrayList<String> J2FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J2 = creerJoueur(J2ValeurCarte, J2FamilleCarte);
 
+    //As (13)
+    private ArrayList<Integer> J3ValeurCarte = new ArrayList<>(Arrays.asList(5, 7, 8, 13, 6));
+    private ArrayList<String> J3FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J3 = creerJoueur(J3ValeurCarte, J3FamilleCarte);
 
-        liste_nbr_j2 = new ArrayList<>(Arrays.asList(3, 3, 7, 8, 10));
-        liste_col_j2 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Pi", "Pi"));
-        joueur2 = creerJoueur(liste_nbr_j2, liste_col_j2);
+    //Paire --------------------------------------------------------------------------------------------------------
 
+    //3
+    private ArrayList<Integer> J4ValeurCarte = new ArrayList<>(Arrays.asList(3, 5, 13, 8, 3));
+    private ArrayList<String> J4FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Ca"));
+    private Joueur J4 = creerJoueur(J4ValeurCarte, J4FamilleCarte);
 
-        liste_nbr_j3 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
-        liste_col_j3 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
-        joueur3 = creerJoueur(liste_nbr_j3, liste_col_j3);
+    //7
+    private ArrayList<Integer> J5ValeurCarte = new ArrayList<>(Arrays.asList(8, 12, 7, 10, 7));
+    private ArrayList<String> J5FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J5 = creerJoueur(J5ValeurCarte, J5FamilleCarte);
 
+    //Valet(10)
+    private ArrayList<Integer> J6ValeurCarte = new ArrayList<>(Arrays.asList(10, 9, 12, 3, 10));
+    private ArrayList<String> J6FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Ca"));
+    private Joueur J6 = creerJoueur(J6ValeurCarte, J6FamilleCarte);
 
-        liste_nbr_j4 = new ArrayList<>(Arrays.asList(13, 13, 4, 4, 12));
-        liste_col_j4 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
-        joueur4 = creerJoueur(liste_nbr_j4, liste_col_j4);
+    //Double paire -------------------------------------------------------------------------------------------------
 
+    //6 et 5
+    private ArrayList<Integer> J7ValeurCarte = new ArrayList<>(Arrays.asList(6, 6, 5, 5, 11));
+    private ArrayList<String> J7FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J7 = creerJoueur(J7ValeurCarte, J7FamilleCarte);
 
-        liste_nbr_j5 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 12));
-        liste_col_j5 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
-        joueur5 = creerJoueur(liste_nbr_j5, liste_col_j5);
+    //Valet (10) et 8
+    private ArrayList<Integer> J8ValeurCarte = new ArrayList<>(Arrays.asList(8, 12, 10, 10, 8));
+    private ArrayList<String> J8FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Ca"));
+    private Joueur J8 = creerJoueur(J8ValeurCarte, J8FamilleCarte);
 
+    //Roi (12) et Valet (10)
+    private ArrayList<Integer> J9ValeurCarte = new ArrayList<>(Arrays.asList(12, 12, 10, 10, 8));
+    private ArrayList<String> J9FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J9 = creerJoueur(J9ValeurCarte, J9FamilleCarte);
 
-        liste_nbr_j6 = new ArrayList<>(Arrays.asList(13, 13, 4, 5, 13));
-        liste_col_j6 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
-        joueur6 = creerJoueur(liste_nbr_j6, liste_col_j6);
+    //Brelan -------------------------------------------------------------------------------------------------------
 
-        liste_nbr_j7 = new ArrayList<>(Arrays.asList(13, 8, 5, 5, 5));
-        liste_col_j7 = new ArrayList<>(Arrays.asList("Pi", "Co", "Co", "Co", "Pi"));
-        joueur7 = creerJoueur(liste_nbr_j7, liste_col_j7);
+    //1
+    private ArrayList<Integer> J10ValeurCarte = new ArrayList<>(Arrays.asList(3, 1, 1, 1, 9));
+    private ArrayList<String> J10FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J10 = creerJoueur(J10ValeurCarte, J10FamilleCarte);
 
-        liste_nbr_j8 = new ArrayList<>(Arrays.asList(14, 3, 14, 14, 11));
-        liste_col_j8 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
-        joueur8 = creerJoueur(liste_nbr_j8, liste_col_j8);
+    //7
+    private ArrayList<Integer> J11ValeurCarte = new ArrayList<>(Arrays.asList(7, 7, 7, 8, 12));
+    private ArrayList<String> J11FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J11 = creerJoueur(J11ValeurCarte, J11FamilleCarte);
 
-        liste_nbr_j9 = new ArrayList<>(Arrays.asList(3, 5, 4, 7, 6));
-        liste_col_j9 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
-        joueur9 = creerJoueur(liste_nbr_j9, liste_col_j9);
+    //As (13)
+    private ArrayList<Integer> J12ValeurCarte = new ArrayList<>(Arrays.asList(4, 5, 13, 13, 13));
+    private ArrayList<String> J12FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J12 = creerJoueur(J12ValeurCarte, J12FamilleCarte);
 
-        liste_nbr_j10 = new ArrayList<>(Arrays.asList(7, 9, 8, 10, 11));
-        liste_col_j10 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
-        joueur10 = creerJoueur(liste_nbr_j10, liste_col_j10);
+    //Suite --------------------------------------------------------------------------------------------------------
 
-        liste_nbr_j11 = new ArrayList<>(Arrays.asList(2, 3, 4, 6, 7));
-        liste_col_j11 = new ArrayList<>(Arrays.asList("Pi", "Co", "Pi", "Co", "Pi"));
-        joueur11 = creerJoueur(liste_nbr_j11, liste_col_j11);
+    //5
+    private ArrayList<Integer> J13ValeurCarte = new ArrayList<>(Arrays.asList(3, 2, 1, 4, 5));
+    private ArrayList<String> J13FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J13 = creerJoueur(J13ValeurCarte, J13FamilleCarte);
 
-        liste_nbr_j12 = new ArrayList<>(Arrays.asList(2, 3, 4, 6, 7));
-        liste_col_j12 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
-        joueur12 = creerJoueur(liste_nbr_j12, liste_col_j12);
+    //9
+    private ArrayList<Integer> J14ValeurCarte = new ArrayList<>(Arrays.asList(8, 7, 5, 6, 9));
+    private ArrayList<String> J14FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J14 = creerJoueur(J14ValeurCarte, J14FamilleCarte);
 
-        liste_nbr_j13 = new ArrayList<>(Arrays.asList(13, 5, 4, 8, 7));
-        liste_col_j13 = new ArrayList<>(Arrays.asList("Co", "Co", "Co", "Co", "Co"));
-        joueur13 = creerJoueur(liste_nbr_j13, liste_col_j13);
+    //As (13)
+    private ArrayList<Integer> J15ValeurCarte = new ArrayList<>(Arrays.asList(9, 11, 10, 13, 12));
+    private ArrayList<String> J15FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J15 = creerJoueur(J15ValeurCarte, J15FamilleCarte);
 
-        liste_nbr_j14 = new ArrayList<>(Arrays.asList(10, 3, 4, 6, 7));
-        liste_col_j14 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Co"));
-        joueur14 = creerJoueur(liste_nbr_j14, liste_col_j14);
-        //pour full ce qui suit
-        liste_nbr_j15 = new ArrayList<>(Arrays.asList(3, 3, 3, 2, 2));
-        liste_col_j15 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
-        joueur15 = creerJoueur(liste_nbr_j15, liste_col_j15);
+    //Couleur ------------------------------------------------------------------------------------------------------
 
-        liste_nbr_j16 = new ArrayList<>(Arrays.asList(4, 4, 4, 11, 11));
-        liste_col_j16 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
-        joueur16 = creerJoueur(liste_nbr_j16, liste_col_j16);
+    //7
+    private ArrayList<Integer> J16ValeurCarte = new ArrayList<>(Arrays.asList(2, 1, 6, 4, 7));
+    private ArrayList<String> J16FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+    private Joueur J16 = creerJoueur(J16ValeurCarte, J16FamilleCarte);
 
-        liste_nbr_j17 = new ArrayList<>(Arrays.asList(5, 5, 5, 6, 7));
-        liste_col_j17 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
-        joueur17 = creerJoueur(liste_nbr_j17, liste_col_j17);
-        //pour le carré
-        liste_nbr_j18 = new ArrayList<>(Arrays.asList(3, 3, 3, 3, 2));
-        liste_col_j18 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Co"));
-        joueur18 = creerJoueur(liste_nbr_j18, liste_col_j18);
+    //9
+    private ArrayList<Integer> J17ValeurCarte = new ArrayList<>(Arrays.asList(9, 6, 4, 1, 3));
+    private ArrayList<String> J17FamilleCarte = new ArrayList<>(Arrays.asList("Co", "Co", "Co", "Co", "Co"));
+    private Joueur J17 = creerJoueur(J17ValeurCarte, J17FamilleCarte);
 
-        liste_nbr_j19 = new ArrayList<>(Arrays.asList(4, 4, 4, 11, 4));
-        liste_col_j19 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Tr"));
-        joueur19 = creerJoueur(liste_nbr_j19, liste_col_j19);
+    //Valet (10)
+    private ArrayList<Integer> J18ValeurCarte = new ArrayList<>(Arrays.asList(2, 8, 4, 5, 10));
+    private ArrayList<String> J18FamilleCarte = new ArrayList<>(Arrays.asList("Tr", "Tr", "Tr", "Tr", "Tr"));
+    private Joueur J18 = creerJoueur(J18ValeurCarte, J18FamilleCarte);
 
-        liste_nbr_j20 = new ArrayList<>(Arrays.asList(5, 5, 5, 6, 7));
-        liste_col_j20 = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Pi", "Co"));
-        joueur20 = creerJoueur(liste_nbr_j20, liste_col_j20);
-        //quinte flush
-        liste_nbr_j21 = new ArrayList<>(Arrays.asList(8, 7, 6, 5, 4));
-        liste_col_j21 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
-        joueur21 = creerJoueur(liste_nbr_j21, liste_col_j21);
+    //Full ---------------------------------------------------------------------------------------------------------
 
-        liste_nbr_j22 = new ArrayList<>(Arrays.asList(13, 11, 9, 12, 10));
-        liste_col_j22 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
-        joueur22 = creerJoueur(liste_nbr_j22, liste_col_j22);
+    //3 par les As (13)
+    private ArrayList<Integer> J19ValeurCarte = new ArrayList<>(Arrays.asList(3, 3, 3, 13, 13));
+    private ArrayList<String> J19FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J19 = creerJoueur(J19ValeurCarte, J19FamilleCarte);
 
-        liste_nbr_j23 = new ArrayList<>(Arrays.asList(2, 5, 4, 6, 7));
-        liste_col_j23 = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
-        joueur23 = creerJoueur(liste_nbr_j23, liste_col_j23);
+    //6 par les 5
+    private ArrayList<Integer> J20ValeurCarte = new ArrayList<>(Arrays.asList(6, 5, 5, 6, 6));
+    private ArrayList<String> J20FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J20 = creerJoueur(J20ValeurCarte, J20FamilleCarte);
 
+    //Dame (11) par les 1
+    private ArrayList<Integer> J21ValeurCarte = new ArrayList<>(Arrays.asList(1, 1, 11, 11, 11));
+    private ArrayList<String> J21FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J21 = creerJoueur(J21ValeurCarte, J21FamilleCarte);
 
-    }
+    //Carré --------------------------------------------------------------------------------------------------------
+
+    //1
+    private ArrayList<Integer> J22ValeurCarte = new ArrayList<>(Arrays.asList(1, 1, 1, 1, 5));
+    private ArrayList<String> J22FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J22 = creerJoueur(J22ValeurCarte, J22FamilleCarte);
+
+    //3
+    private ArrayList<Integer> J23ValeurCarte = new ArrayList<>(Arrays.asList(3, 3, 3, 13, 3));
+    private ArrayList<String> J23FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J23 = creerJoueur(J23ValeurCarte, J23FamilleCarte);
+
+    //9
+    private ArrayList<Integer> J24ValeurCarte = new ArrayList<>(Arrays.asList(9, 9, 2, 9, 9));
+    private ArrayList<String> J24FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private Joueur J24 = creerJoueur(J24ValeurCarte, J24FamilleCarte);
+
+    //Quinte Flush -------------------------------------------------------------------------------------------------
+
+    //8
+    private ArrayList<Integer> J25ValeurCarte = new ArrayList<>(Arrays.asList(5, 4, 8, 7, 6));
+    private ArrayList<String> J25FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Pi", "Pi", "Pi", "Pi"));
+    private Joueur J25 = creerJoueur(J25ValeurCarte, J25FamilleCarte);
+
+    //Valet (10)
+    private ArrayList<Integer> J26ValeurCarte = new ArrayList<>(Arrays.asList(10, 8, 6, 7, 9));
+    private ArrayList<String> J26FamilleCarte = new ArrayList<>(Arrays.asList("Co", "Co", "Co", "Co", "Co"));
+    private Joueur J26 = creerJoueur(J26ValeurCarte, J26FamilleCarte);
+
+    //As (13)
+    private ArrayList<Integer> J27ValeurCarte = new ArrayList<>(Arrays.asList(12, 13, 10, 11, 9));
+    private ArrayList<String> J27FamilleCarte = new ArrayList<>(Arrays.asList("Ca", "Ca", "Ca", "Ca", "Ca"));
+    private Joueur J27 = creerJoueur(J27ValeurCarte, J27FamilleCarte);
+
+    //--------------------------------------------------------------------------------------------------------------
+    //On introduit la valeur des mains -----------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------------
+
+    //Hauteur ------------------------------------------------------------------------------------------------------
+    private ValeurMain VMJ1 = new ValeurMain(J1);
+    private ValeurMain VMJ2 = new ValeurMain(J2);
+    private ValeurMain VMJ3 = new ValeurMain(J3);
+
+    //Paire --------------------------------------------------------------------------------------------------------
+    private ValeurMain VMJ4 = new ValeurMain(J4);
+    private ValeurMain VMJ5 = new ValeurMain(J5);
+    private ValeurMain VMJ6 = new ValeurMain(J6);
+
+    //Double Paire -------------------------------------------------------------------------------------------------
+    private ValeurMain VMJ7 = new ValeurMain(J7);
+    private ValeurMain VMJ8 = new ValeurMain(J8);
+    private ValeurMain VMJ9 = new ValeurMain(J9);
+
+    //Brelan -------------------------------------------------------------------------------------------------------
+    private ValeurMain VMJ10 = new ValeurMain(J10);
+    private ValeurMain VMJ11 = new ValeurMain(J11);
+    private ValeurMain VMJ12 = new ValeurMain(J12);
+
+    //Suite --------------------------------------------------------------------------------------------------------
+    private ValeurMain VMJ13 = new ValeurMain(J13);
+    private ValeurMain VMJ14 = new ValeurMain(J14);
+    private ValeurMain VMJ15 = new ValeurMain(J15);
+
+    //Couleur ------------------------------------------------------------------------------------------------------
+    private ValeurMain VMJ16 = new ValeurMain(J16);
+    private ValeurMain VMJ17 = new ValeurMain(J17);
+    private ValeurMain VMJ18 = new ValeurMain(J18);
+
+    //Full ---------------------------------------------------------------------------------------------------------
+    private ValeurMain VMJ19 = new ValeurMain(J19);
+    private ValeurMain VMJ20 = new ValeurMain(J20);
+    private ValeurMain VMJ21 = new ValeurMain(J21);
+
+    //Carré --------------------------------------------------------------------------------------------------------
+    private ValeurMain VMJ22 = new ValeurMain(J22);
+    private ValeurMain VMJ23 = new ValeurMain(J23);
+    private ValeurMain VMJ24 = new ValeurMain(J24);
+
+    //Quinte Flush -------------------------------------------------------------------------------------------------
+    private ValeurMain VMJ25 = new ValeurMain(J25);
+    private ValeurMain VMJ26 = new ValeurMain(J26);
+    private ValeurMain VMJ27 = new ValeurMain(J27);
 
     @Test
     public void paireTest() {
-        assertEquals(joueur1.paire(), 0);
-        assertEquals(joueur2.paire(), 3);
-        assertEquals(joueur3.paire(), 13);
     }
 
     @Test
     public void doublePaireTest() {
-        l4 = new ArrayList<Integer>(Arrays.asList(13, 4));
-        assertEquals(joueur4.doublePaire(), l4);
-        assertEquals(joueur5.doublePaire(), new ArrayList<Integer>());
     }
 
     @Test
     public void brelanTest() {
-        assertEquals(joueur6.brelan(),13);
-        assertEquals(joueur7.brelan(),5);
     }
 
 
     @Test
     public void suiteTest(){
-        assertEquals(joueur9.suite(),7);
-        assertEquals(joueur10.suite(),11);
-        assertEquals(joueur11.suite(),0);
     }
 
     @Test
     public void couleurTest(){
-        List<Integer> l12 = new ArrayList<>(Arrays.asList(7, 6, 4, 3, 2));
-        List<Integer> l13 = new ArrayList<>(Arrays.asList(13, 8, 7, 5, 4));
-
-        assertEquals(joueur12.couleur(), l12);
-        assertEquals(joueur13.couleur(), l13);
-        assertEquals(joueur14.couleur(), new ArrayList<Integer>());
     }
 
     @Test
     public void fullTest(){
-        List<Integer> l15 = new ArrayList<>(Arrays.asList(3, 2));
-        List<Integer> l16 = new ArrayList<>(Arrays.asList(4, 11));
-
-        assertEquals(joueur15.full(), l15);
-        assertEquals(joueur16.full(), l16);
-        assertEquals(joueur17.full(), new ArrayList<Integer>());
     }
     @Test
     public void carreTest(){
-        assertEquals(joueur18.carre(),3);
-        assertEquals(joueur19.carre(),4);
-        assertEquals(joueur20.carre(),0);
     }
 
     @Test
     public void quinteFlushTest(){
-        assertEquals(joueur21.quinteFlush(), 8);
-        assertEquals(joueur22.quinteFlush(), 13);
-        assertEquals(joueur23.quinteFlush(), 0);
     }
 
     @Test
     public void niemePhc() {
-        ArrayList<Integer> a1 = new ArrayList<>();
-        a1.add(3);
-        ArrayList<Integer> a2 = new ArrayList<>();
-        ArrayList<Integer> a3 = new ArrayList<>();
-        a3.add(14);
-
-        assertEquals(joueur8.niemePhc(1, a3), 11);
-        assertEquals(joueur2.niemePhc(1,a1),10);
-        assertEquals(joueur2.niemePhc(5,a1),0);
-        assertEquals(joueur2.niemePhc(4,a1),0);
-        assertEquals(joueur2.niemePhc(3,a1),7);
-        assertEquals(joueur2.niemePhc(5,a2),3);
     }
 }

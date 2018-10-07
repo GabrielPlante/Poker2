@@ -11,14 +11,14 @@ public class pokerMain {
             Joueur joueur2 = new Joueur(new Enregistreur().getPaquet());
 
             //On montre qui a gagné
-            ValeurMain j1 = new ValeurMain(joueur1);
-            ValeurMain j2 = new ValeurMain(joueur2);
+            ValeurMain VMJ1 = new ValeurMain(joueur1);
+            ValeurMain VMJ2 = new ValeurMain(joueur2);
             String gagnant = "La main ";
-            if (j1.meilleureQue(j2) == 1)
-                gagnant += ("1 gagne avec " + j1.combinaison() + (new Carte(j1.getValeurMain().get(1), "").valeurToIndiceComplet()));
-            else if (j1.meilleureQue(j2) == -1)
-                gagnant += ("2 gagne avec " + j2.combinaison() + (new Carte(j2.getValeurMain().get(1), "").valeurToIndiceComplet()));
-            else gagnant = "Egalite";
+            if (VMJ1.meilleureQue(VMJ2) == 1)
+                gagnant += ("1 gagne avec " + VMJ1.combinaison() + (new Carte(VMJ1.getValeurMain().get(1), "").valeurToIndiceComplet()));
+            else if (VMJ1.meilleureQue(VMJ2) == -1)
+                gagnant += ("2 gagne avec " + VMJ2.combinaison() + (new Carte(VMJ2.getValeurMain().get(1), "").valeurToIndiceComplet()));
+            else gagnant = "Egalité";
             System.out.println(gagnant);
         }
         catch (RuntimeException e){

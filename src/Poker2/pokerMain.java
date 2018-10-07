@@ -15,9 +15,9 @@ public class pokerMain {
             ValeurMain VMJ2 = new ValeurMain(joueur2);
             String gagnant = "La main ";
             if (VMJ1.meilleureQue(VMJ2) == 1)
-                gagnant += ("1 gagne avec " + VMJ1.combinaison() + (new Carte(VMJ1.getValeurMain().get(1), "").valeurToIndiceComplet()));
+                gagnant += ("1 gagne avec " + VMJ1.texteCombinaison() + (new Carte(VMJ1.getValeurMain().get(1), "").valeurToIndiceComplet()) + VMJ1.texteComplementaire());
             else if (VMJ1.meilleureQue(VMJ2) == -1)
-                gagnant += ("2 gagne avec " + VMJ2.combinaison() + (new Carte(VMJ2.getValeurMain().get(1), "").valeurToIndiceComplet()));
+                gagnant += ("2 gagne avec " + VMJ2.texteCombinaison() + (new Carte(VMJ2.getValeurMain().get(1), "").valeurToIndiceComplet()) + VMJ2.texteComplementaire());
             else gagnant = "Egalité";
             System.out.println(gagnant);
         }

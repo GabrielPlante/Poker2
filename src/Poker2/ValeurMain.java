@@ -71,7 +71,7 @@ public class ValeurMain {
         }
         return 0;
     }
-    public String combinaison(){
+    public String texteCombinaison(){
         switch (valeur.get(0))
         {
             case 1: return "hauteur ";
@@ -83,6 +83,22 @@ public class ValeurMain {
             case 7: return "full aux ";
             case 8: return "carré de ";
             case 9: return "quinte flush hauteur ";
+            default: return "Erreur";
+        }
+    }
+
+    public String texteComplementaire(){
+        switch (valeur.get(0))
+        {
+            case 1: return "";
+            case 2: return "";
+            case 3: return " et de " + new Carte(getValeurMain().get(2), "").valeurToIndiceComplet();
+            case 4: return "";
+            case 5: return "";
+            case 6: return "";
+            case 7: return " par les " + new Carte(getValeurMain().get(2), "").valeurToIndiceComplet();
+            case 8: return "";
+            case 9: return "";
             default: return "Erreur";
         }
     }

@@ -19,7 +19,6 @@ public class EnregistreurTest {
             paquet.add(new Carte(liste_nbr.get(i), liste_col.get(i)));
         return paquet;
     }
-
     private List<Carte> runEnregistreur(String data){
         Enregistreur enr;
         // MOCK System.in

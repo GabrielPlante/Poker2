@@ -75,8 +75,7 @@ public class Enregistreur {
 
     public boolean checkDoublons(Carte carte){
         for (Carte x:paquet)
-            if (x.getNombre() == carte.getNombre() && x.getCouleur().equals(carte.getCouleur()))
-                return true;
+            if (!x.estPasMemeCarte(carte)) return true;
         return false;
     }
     public boolean bonneCouleur(String couleur){

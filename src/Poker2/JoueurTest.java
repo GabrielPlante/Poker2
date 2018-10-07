@@ -173,57 +173,12 @@ public class JoueurTest {
     private ArrayList<String> J27FamilleCarte = new ArrayList<>(Arrays.asList("Ca", "Ca", "Ca", "Ca", "Ca"));
     private Joueur J27 = creerJoueur(J27ValeurCarte, J27FamilleCarte);
 
-    //--------------------------------------------------------------------------------------------------------------
-    //On introduit la valeur des mains -----------------------------------------------------------------------------
-    //--------------------------------------------------------------------------------------------------------------
-
-    //Hauteur ------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ1 = new ValeurMain(J1);
-    private ValeurMain VMJ2 = new ValeurMain(J2);
-    private ValeurMain VMJ3 = new ValeurMain(J3);
-
-    //Paire --------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ4 = new ValeurMain(J4);
-    private ValeurMain VMJ5 = new ValeurMain(J5);
-    private ValeurMain VMJ6 = new ValeurMain(J6);
-
-    //Double Paire -------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ7 = new ValeurMain(J7);
-    private ValeurMain VMJ8 = new ValeurMain(J8);
-    private ValeurMain VMJ9 = new ValeurMain(J9);
-
-    //Brelan -------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ10 = new ValeurMain(J10);
-    private ValeurMain VMJ11 = new ValeurMain(J11);
-    private ValeurMain VMJ12 = new ValeurMain(J12);
-
-    //Suite --------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ13 = new ValeurMain(J13);
-    private ValeurMain VMJ14 = new ValeurMain(J14);
-    private ValeurMain VMJ15 = new ValeurMain(J15);
-
-    //Couleur ------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ16 = new ValeurMain(J16);
-    private ValeurMain VMJ17 = new ValeurMain(J17);
-    private ValeurMain VMJ18 = new ValeurMain(J18);
-
-    //Full ---------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ19 = new ValeurMain(J19);
-    private ValeurMain VMJ20 = new ValeurMain(J20);
-    private ValeurMain VMJ21 = new ValeurMain(J21);
-
-    //Carré --------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ22 = new ValeurMain(J22);
-    private ValeurMain VMJ23 = new ValeurMain(J23);
-    private ValeurMain VMJ24 = new ValeurMain(J24);
-
-    //Quinte Flush -------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ25 = new ValeurMain(J25);
-    private ValeurMain VMJ26 = new ValeurMain(J26);
-    private ValeurMain VMJ27 = new ValeurMain(J27);
-
     @Test
     public void paireTest() {
+        assertEquals(J4.paire(), 3);
+        assertEquals(J5.paire(), 7);
+        assertEquals(J6.paire(), 10);
+        assertEquals(J13.paire(), 0);
     }
 
     @Test
@@ -232,11 +187,19 @@ public class JoueurTest {
 
     @Test
     public void brelanTest() {
+        assertEquals(J10.brelan(), 1);
+        assertEquals(J11.brelan(), 7);
+        assertEquals(J12.brelan(), 13);
+        assertEquals(J19.brelan(), 0);
     }
 
 
     @Test
     public void suiteTest(){
+        assertEquals(J13.suite(), 5);
+        assertEquals(J14.suite(), 9);
+        assertEquals(J15.suite(), 13);
+        assertEquals(J12.suite(), 0);
     }
 
     @Test
@@ -248,10 +211,18 @@ public class JoueurTest {
     }
     @Test
     public void carreTest(){
+        assertEquals(J22.carre(), 1);
+        assertEquals(J23.carre(), 3);
+        assertEquals(J24.carre(), 9);
+        assertEquals(J21.carre(), 0);
     }
 
     @Test
     public void quinteFlushTest(){
+        assertEquals(J25.quinteFlush(), 8);
+        assertEquals(J26.quinteFlush(), 10);
+        assertEquals(J27.quinteFlush(), 13);
+        assertEquals(J16.quinteFlush(), 0);
     }
 
     @Test

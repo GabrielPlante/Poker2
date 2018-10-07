@@ -74,32 +74,17 @@ public class ValeurMain {
     public String texteCombinaison(){
         switch (valeur.get(0))
         {
-            case 1: return "hauteur ";
-            case 2: return "paire de ";
-            case 3: return "double paire de ";
-            case 4: return "brelan de ";
-            case 5: return "suite hauteur ";
-            case 6: return "couleur hauteur ";
-            case 7: return "full aux ";
-            case 8: return "carré de ";
-            case 9: return "quinte flush hauteur ";
+            case 1: return "hauteur " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet();
+            case 2: return "paire de " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet();
+            case 3: return "double paire de " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet() + " et de " + new Carte (getValeurMain().get(2), "").valeurToIndiceComplet();
+            case 4: return "brelan de " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet();
+            case 5: return "suite hauteur " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet();
+            case 6: return "couleur hauteur " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet();
+            case 7: return "full aux " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet() + " par les " + new Carte (getValeurMain().get(2), "").valeurToIndiceComplet();
+            case 8: return "carré de " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet();
+            case 9: return "quinte flush hauteur " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet();
             default: return "Erreur";
         }
     }
 
-    public String texteComplementaire(){
-        switch (valeur.get(0))
-        {
-            case 1: return "";
-            case 2: return "";
-            case 3: return " et de " + new Carte(getValeurMain().get(2), "").valeurToIndiceComplet();
-            case 4: return "";
-            case 5: return "";
-            case 6: return "";
-            case 7: return " par les " + new Carte(getValeurMain().get(2), "").valeurToIndiceComplet();
-            case 8: return "";
-            case 9: return "";
-            default: return "Erreur";
-        }
-    }
 }

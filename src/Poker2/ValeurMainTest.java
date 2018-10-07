@@ -44,7 +44,7 @@ public class ValeurMainTest {
 
     //3
     private ArrayList<Integer> J4ValeurCarte = new ArrayList<>(Arrays.asList(3, 5, 13, 8, 3));
-    private ArrayList<String> J4FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private ArrayList<String> J4FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Ca"));
     private Joueur J4 = creerJoueur(J4ValeurCarte, J4FamilleCarte);
 
     //7
@@ -54,7 +54,7 @@ public class ValeurMainTest {
 
     //Valet(10)
     private ArrayList<Integer> J6ValeurCarte = new ArrayList<>(Arrays.asList(10, 9, 12, 3, 10));
-    private ArrayList<String> J6FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private ArrayList<String> J6FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Ca"));
     private Joueur J6 = creerJoueur(J6ValeurCarte, J6FamilleCarte);
 
     //Double paire -------------------------------------------------------------------------------------------------
@@ -66,7 +66,7 @@ public class ValeurMainTest {
 
     //Valet (10) et 8
     private ArrayList<Integer> J8ValeurCarte = new ArrayList<>(Arrays.asList(8, 12, 10, 10, 8));
-    private ArrayList<String> J8FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Pi"));
+    private ArrayList<String> J8FamilleCarte = new ArrayList<>(Arrays.asList("Pi", "Co", "Ca", "Tr", "Ca"));
     private Joueur J8 = creerJoueur(J8ValeurCarte, J8FamilleCarte);
 
     //Roi (12) et Valet (10)
@@ -265,9 +265,9 @@ public class ValeurMainTest {
     private ArrayList<Integer> VMJ21Modele = new ArrayList<>(Arrays.asList(7, 11, 1, 0, 0, 0));
 
     //Carré
-    private ArrayList<Integer> VMJ22Modele = new ArrayList<>(Arrays.asList(8, 1, 0, 0, 0, 0));
-    private ArrayList<Integer> VMJ23Modele = new ArrayList<>(Arrays.asList(8, 3, 0, 0, 0, 0));
-    private ArrayList<Integer> VMJ24Modele = new ArrayList<>(Arrays.asList(8, 9, 0, 0, 0, 0));
+    private ArrayList<Integer> VMJ22Modele = new ArrayList<>(Arrays.asList(8, 1, 5, 0, 0, 0));
+    private ArrayList<Integer> VMJ23Modele = new ArrayList<>(Arrays.asList(8, 3, 13, 0, 0, 0));
+    private ArrayList<Integer> VMJ24Modele = new ArrayList<>(Arrays.asList(8, 9, 2, 0, 0, 0));
 
     //Quinte Flush
     private ArrayList<Integer> VMJ25Modele = new ArrayList<>(Arrays.asList(9, 8, 0, 0, 0, 0));

@@ -21,12 +21,8 @@ public class Enregistreur {
             x = x.replace("0","");
             int nombre = convertisseurIndice(sNombre);
 
-            if (nombre == 0)
-                throw new RuntimeException("La saisie de la valeur d'au moins une carte n'a pas été reconnue\nRappel: utiliser des entiers de 2 à 10 et {V,D,R,A}");
             String couleur = x.substring(1, 3);
-            couleur = couleur.substring(0,1).toUpperCase()+couleur.substring(1).toLowerCase();
-            if (!bonneCouleur(couleur))
-                throw new RuntimeException("La saisie de la famille d'au moins une carte n'a pas été reconnue\nRappel: utiliser {Pi,Co,Tr,Ca}");
+            couleur = extraireCouleur(couleur);
             Carte carte = new Carte(nombre, couleur);
             if (checkDoublons(carte))
                 throw  new RuntimeException("Une carte au moins a été utilisée plusieurs fois");
@@ -42,6 +38,12 @@ public class Enregistreur {
     public Enregistreur(ArrayList<Carte> paquet_brut)//Pour les tests uniquements
     {
         paquet = paquet_brut;
+    }
+    public String extraireCouleur(String carte){
+        carte = carte.substring(0,1).toUpperCase()+carte.substring(1).toLowerCase();
+        if (!bonneCouleur(carte))
+            throw new RuntimeException("La saisie de la famille d'au moins une carte n'a pas été reconnue\nRappel: utiliser {Pi,Co,Tr,Ca}");
+        return carte;
     }
     public int convertisseurIndice(String indice){
         int nombre = 0;
@@ -63,11 +65,11 @@ public class Enregistreur {
                     nombre = Integer.parseInt(indice);
                     --nombre;
                 } catch (NumberFormatException e){
-                    return 0;
+                    throw new RuntimeException("La saisie de la valeur d'au moins une carte n'a pas été reconnue\nRappel: utiliser des entiers de 2 à 10 et {V,D,R,A}");
                 }
         }
         if (nombre < 1 || nombre > 13)
-            return 0;
+            throw new RuntimeException("La saisie de la valeur d'au moins une carte n'a pas été reconnue\nRappel: utiliser des entiers de 2 à 10 et {V,D,R,A}");
         return nombre;
     }
 

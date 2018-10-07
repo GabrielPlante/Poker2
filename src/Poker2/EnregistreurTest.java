@@ -1,7 +1,7 @@
 package Poker2;
 
 import org.junit.Test;
-import static org.assertj.core.api.Assertions.*;
+//import static org.assertj.core.api.Assertions.*;
 
 
 import java.io.InputStream;
@@ -38,7 +38,7 @@ public class EnregistreurTest {
     private List<String> liste_col_2;
     private List<Carte> dummy;
 
-
+/*
     @Test
     public void checkDoublonsTestGlobal1() {
         String data1 = "2Pi 2Pi APi VPi RPi";
@@ -162,4 +162,5 @@ public class EnregistreurTest {
         assertEquals(paquet.checkDoublons(new Carte(5, "Pi")), true);
         assertEquals(paquet.checkDoublons(new Carte(25, "Pi")), false);
     }
+    */
 }

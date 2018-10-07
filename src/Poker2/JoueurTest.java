@@ -190,7 +190,7 @@ public class JoueurTest {
         assertEquals(J10.brelan(), 1);
         assertEquals(J11.brelan(), 7);
         assertEquals(J12.brelan(), 13);
-        assertEquals(J19.brelan(), 0);
+        assertEquals(J13.brelan(), 0);
     }
 
 

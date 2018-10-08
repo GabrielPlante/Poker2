@@ -64,7 +64,7 @@ public class Joueur {
             if (y.getNombre() < min) min = y.getNombre();
             if (y.getNombre() > max) max = y.getNombre();
         }
-        if (max == 13 && min != 9) min = 0;//Si il y a un as qui n'est pas le bout de la suite 10 V D R A
+        if (max == 13 && min != 9) min = 0;//Si il y a un as qui n'est pas le bout de la suite 10 V D R A?
         for (int i = min + 1; i <= min + 4; i++) {
             for (Carte y : main) {
                 if (y.getNombre() == i) {
@@ -146,6 +146,6 @@ public class Joueur {
         for (Carte x:main)
             for (Carte y:autreJoueur.getMain())
                 if (x.equals(y))
-                    throw new RuntimeException("Des cartes sont en doubles !");
+                    throw new RuntimeException("Des cartes sont en double !");
     }
 }

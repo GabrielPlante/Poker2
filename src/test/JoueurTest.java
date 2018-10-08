@@ -1,14 +1,16 @@
-package poker2;
+package test;
 
 import org.junit.Test;
+import poker2.Carte;
+import poker2.Joueur;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 import static org.junit.Assert.*;
 
-public class ValeurMainTest {
-
+public class JoueurTest {
     private Joueur creerJoueur(ArrayList<Integer> liste_nbr, ArrayList<String> liste_col){
         ArrayList<Carte> liste_carte = new ArrayList<>();
         for (int i = 0; i!= 5; ++i)
@@ -17,7 +19,6 @@ public class ValeurMainTest {
     }
 
     //@Before
-    // On déclare et affecte les variables en même temps pour limiter le nombre de lignes, d'où le @Before qui est mis en commentaires
     // 3 joueurs par combinaisons, l'indice d'un joueur indique son classement par rapport aux autres: Jx bats Jy si x>y
 
     //hauteur ------------------------------------------------------------------------------------------------------
@@ -173,157 +174,90 @@ public class ValeurMainTest {
     private ArrayList<String> J27FamilleCarte = new ArrayList<>(Arrays.asList("Ca", "Ca", "Ca", "Ca", "Ca"));
     private Joueur J27 = creerJoueur(J27ValeurCarte, J27FamilleCarte);
 
-    //--------------------------------------------------------------------------------------------------------------
-    //On introduit la valeur des mains -----------------------------------------------------------------------------
-    //--------------------------------------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------------------------------------
+    //Array pour les méthodes double paire, couleur et full ---------------------------------------------------------
+    // --------------------------------------------------------------------------------------------------------------
 
-    //Hauteur ------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ1 = new ValeurMain(J1);
-    private ValeurMain VMJ2 = new ValeurMain(J2);
-    private ValeurMain VMJ3 = new ValeurMain(J3);
+    private ArrayList<Integer> LVide = new ArrayList<>(Collections.emptyList());
 
-    //Paire --------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ4 = new ValeurMain(J4);
-    private ValeurMain VMJ5 = new ValeurMain(J5);
-    private ValeurMain VMJ6 = new ValeurMain(J6);
+    private ArrayList<Integer> LJ7 = new ArrayList<>(Arrays.asList(6, 5));
+    private ArrayList<Integer> LJ8 = new ArrayList<>(Arrays.asList(10, 8));
+    private ArrayList<Integer> LJ9 = new ArrayList<>(Arrays.asList(12, 10));
 
-    //Double Paire -------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ7 = new ValeurMain(J7);
-    private ValeurMain VMJ8 = new ValeurMain(J8);
-    private ValeurMain VMJ9 = new ValeurMain(J9);
+    private ArrayList<Integer> LJ16 = new ArrayList<>(Arrays.asList(7, 6, 4, 2, 1));
+    private ArrayList<Integer> LJ17 = new ArrayList<>(Arrays.asList(9, 6, 4, 3, 1));
+    private ArrayList<Integer> LJ18 = new ArrayList<>(Arrays.asList(10, 8, 5, 4, 2));
 
-    //Brelan -------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ10 = new ValeurMain(J10);
-    private ValeurMain VMJ11 = new ValeurMain(J11);
-    private ValeurMain VMJ12 = new ValeurMain(J12);
-
-    //Suite --------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ13 = new ValeurMain(J13);
-    private ValeurMain VMJ14 = new ValeurMain(J14);
-    private ValeurMain VMJ15 = new ValeurMain(J15);
-
-    //Couleur ------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ16 = new ValeurMain(J16);
-    private ValeurMain VMJ17 = new ValeurMain(J17);
-    private ValeurMain VMJ18 = new ValeurMain(J18);
-
-    //Full ---------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ19 = new ValeurMain(J19);
-    private ValeurMain VMJ20 = new ValeurMain(J20);
-    private ValeurMain VMJ21 = new ValeurMain(J21);
-
-    //Carré --------------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ22 = new ValeurMain(J22);
-    private ValeurMain VMJ23 = new ValeurMain(J23);
-    private ValeurMain VMJ24 = new ValeurMain(J24);
-
-    //Quinte Flush -------------------------------------------------------------------------------------------------
-    private ValeurMain VMJ25 = new ValeurMain(J25);
-    private ValeurMain VMJ26 = new ValeurMain(J26);
-    private ValeurMain VMJ27 = new ValeurMain(J27);
-
-    // -------------------------------------------------------------------------------------------------------------
-    //ArrayList égales aux valeurs des mains des joueurs -----------------------------------------------------------
-    // -------------------------------------------------------------------------------------------------------------
-
-    //Hauteur
-    private ArrayList<Integer> VMJ1Modele = new ArrayList<>(Arrays.asList(1, 9, 8, 7, 4, 3));
-    private ArrayList<Integer> VMJ2Modele = new ArrayList<>(Arrays.asList(1, 12, 9, 5, 3, 2));
-    private ArrayList<Integer> VMJ3Modele = new ArrayList<>(Arrays.asList(1, 13, 8, 7, 6, 5));
-
-    //Paire
-    private ArrayList<Integer> VMJ4Modele = new ArrayList<>(Arrays.asList(2, 3, 13, 8, 5, 0));
-    private ArrayList<Integer> VMJ5Modele = new ArrayList<>(Arrays.asList(2, 7, 12, 10, 8, 0));
-    private ArrayList<Integer> VMJ6Modele = new ArrayList<>(Arrays.asList(2, 10, 12, 9, 3, 0));
-
-    //Double Paire
-    private ArrayList<Integer> VMJ7Modele = new ArrayList<>(Arrays.asList(3, 6, 5, 11, 0, 0));
-    private ArrayList<Integer> VMJ8Modele = new ArrayList<>(Arrays.asList(3, 10, 8, 12, 0, 0));
-    private ArrayList<Integer> VMJ9Modele = new ArrayList<>(Arrays.asList(3, 12, 10, 8, 0, 0));
-
-    //Brelan
-    private ArrayList<Integer> VMJ10Modele = new ArrayList<>(Arrays.asList(4, 1, 0, 0, 0, 0));
-    private ArrayList<Integer> VMJ11Modele = new ArrayList<>(Arrays.asList(4, 7, 0, 0, 0, 0));
-    private ArrayList<Integer> VMJ12Modele = new ArrayList<>(Arrays.asList(4, 13, 0, 0, 0, 0));
-
-    //Suite
-    private ArrayList<Integer> VMJ13Modele = new ArrayList<>(Arrays.asList(5, 5, 0, 0, 0, 0));
-    private ArrayList<Integer> VMJ14Modele = new ArrayList<>(Arrays.asList(5, 9, 0, 0, 0, 0));
-    private ArrayList<Integer> VMJ15Modele = new ArrayList<>(Arrays.asList(5, 13, 0, 0, 0, 0));
-
-    //Couleur
-    private ArrayList<Integer> VMJ16Modele = new ArrayList<>(Arrays.asList(6, 7, 6, 4, 2, 1));
-    private ArrayList<Integer> VMJ17Modele = new ArrayList<>(Arrays.asList(6, 9, 6, 4, 3, 1));
-    private ArrayList<Integer> VMJ18Modele = new ArrayList<>(Arrays.asList(6, 10, 8, 5, 4, 2));
-
-    //Full
-    private ArrayList<Integer> VMJ19Modele = new ArrayList<>(Arrays.asList(7, 3, 13, 0, 0, 0));
-    private ArrayList<Integer> VMJ20Modele = new ArrayList<>(Arrays.asList(7, 6, 5, 0, 0, 0));
-    private ArrayList<Integer> VMJ21Modele = new ArrayList<>(Arrays.asList(7, 11, 1, 0, 0, 0));
-
-    //Carré
-    private ArrayList<Integer> VMJ22Modele = new ArrayList<>(Arrays.asList(8, 1, 5, 0, 0, 0));
-    private ArrayList<Integer> VMJ23Modele = new ArrayList<>(Arrays.asList(8, 3, 13, 0, 0, 0));
-    private ArrayList<Integer> VMJ24Modele = new ArrayList<>(Arrays.asList(8, 9, 2, 0, 0, 0));
-
-    //Quinte Flush
-    private ArrayList<Integer> VMJ25Modele = new ArrayList<>(Arrays.asList(9, 8, 0, 0, 0, 0));
-    private ArrayList<Integer> VMJ26Modele = new ArrayList<>(Arrays.asList(9, 10, 0, 0, 0, 0));
-    private ArrayList<Integer> VMJ27Modele = new ArrayList<>(Arrays.asList(9, 13, 0, 0, 0, 0));
-
+    private ArrayList<Integer> LJ19 = new ArrayList<>(Arrays.asList(3, 13));
+    private ArrayList<Integer> LJ20 = new ArrayList<>(Arrays.asList(6, 5));
+    private ArrayList<Integer> LJ21 = new ArrayList<>(Arrays.asList(11, 1));
 
     @Test
-    public void valeurMainTest(){
-        assertEquals(VMJ1.getValeurMain(), VMJ1Modele);
-        assertEquals(VMJ2.getValeurMain(), VMJ2Modele);
-        assertEquals(VMJ3.getValeurMain(), VMJ3Modele);
-        assertEquals(VMJ4.getValeurMain(), VMJ4Modele);
-        assertEquals(VMJ5.getValeurMain(), VMJ5Modele);
-        assertEquals(VMJ6.getValeurMain(), VMJ6Modele);
-        assertEquals(VMJ7.getValeurMain(), VMJ7Modele);
-        assertEquals(VMJ8.getValeurMain(), VMJ8Modele);
-        assertEquals(VMJ9.getValeurMain(), VMJ9Modele);
-        assertEquals(VMJ10.getValeurMain(), VMJ10Modele);
-        assertEquals(VMJ11.getValeurMain(), VMJ11Modele);
-        assertEquals(VMJ12.getValeurMain(), VMJ12Modele);
-        assertEquals(VMJ13.getValeurMain(), VMJ13Modele);
-        assertEquals(VMJ14.getValeurMain(), VMJ14Modele);
-        assertEquals(VMJ15.getValeurMain(), VMJ15Modele);
-        assertEquals(VMJ16.getValeurMain(), VMJ16Modele);
-        assertEquals(VMJ17.getValeurMain(), VMJ17Modele);
-        assertEquals(VMJ18.getValeurMain(), VMJ18Modele);
-        assertEquals(VMJ19.getValeurMain(), VMJ19Modele);
-        assertEquals(VMJ20.getValeurMain(), VMJ20Modele);
-        assertEquals(VMJ21.getValeurMain(), VMJ21Modele);
-        assertEquals(VMJ22.getValeurMain(), VMJ22Modele);
-        assertEquals(VMJ23.getValeurMain(), VMJ23Modele);
-        assertEquals(VMJ24.getValeurMain(), VMJ24Modele);
-        assertEquals(VMJ25.getValeurMain(), VMJ25Modele);
-        assertEquals(VMJ26.getValeurMain(), VMJ26Modele);
-        assertEquals(VMJ27.getValeurMain(), VMJ27Modele);
+    public void paireTest() {
+        assertEquals(J4.paire(), 3);
+        assertEquals(J5.paire(), 7);
+        assertEquals(J6.paire(), 10);
+        assertEquals(J13.paire(), 0);
     }
 
     @Test
-    public void meilleurQueTest() {
-        assertEquals(VMJ1.meilleureQue(VMJ2),-1);
-        assertEquals(VMJ3.meilleureQue(VMJ4),-1);
-        assertEquals(VMJ5.meilleureQue(VMJ6),-1);
-        assertEquals(VMJ7.meilleureQue(VMJ8),-1);
-        assertEquals(VMJ9.meilleureQue(VMJ10),-1);
-        assertEquals(VMJ11.meilleureQue(VMJ12),-1);
-        assertEquals(VMJ13.meilleureQue(VMJ14),-1);
-        assertEquals(VMJ15.meilleureQue(VMJ16),-1);
-        assertEquals(VMJ17.meilleureQue(VMJ18),-1);
-        assertEquals(VMJ20.meilleureQue(VMJ19),1);
-        assertEquals(VMJ19.meilleureQue(VMJ19),0);
-        assertEquals(VMJ1.meilleureQue(VMJ1),0);
-        assertEquals(VMJ21.meilleureQue(VMJ20),1);
-        assertEquals(VMJ22.meilleureQue(VMJ21),1);
-        assertEquals(VMJ24.meilleureQue(VMJ23),1);
-        assertEquals(VMJ26.meilleureQue(VMJ25),1);
-        assertEquals(VMJ27.meilleureQue(VMJ1),1);
-        assertEquals(VMJ23.meilleureQue(VMJ21),1);
-        assertEquals(VMJ3.meilleureQue(VMJ8),-1);
+    public void doublePaireTest() {
+        assertEquals(J7.doublePaire(), LJ7);
+        assertEquals(J8.doublePaire(), LJ8);
+        assertEquals(J9.doublePaire(), LJ9);
+        assertEquals(J4.doublePaire(), LVide);
+    }
+
+    @Test
+    public void brelanTest() {
+        assertEquals(J10.brelan(), 1);
+        assertEquals(J11.brelan(), 7);
+        assertEquals(J12.brelan(), 13);
+        assertEquals(J13.brelan(), 0);
+    }
+
+
+    @Test
+    public void suiteTest(){
+        assertEquals(J13.suite(), 5);
+        assertEquals(J14.suite(), 9);
+        assertEquals(J15.suite(), 13);
+        assertEquals(J12.suite(), 0);
+    }
+
+    @Test
+    public void couleurTest(){
+        assertEquals(J16.couleur(), LJ16);
+        assertEquals(J17.couleur(), LJ17);
+        assertEquals(J18.couleur(), LJ18);
+        assertEquals(J15.couleur(), LVide);
+    }
+
+    @Test
+    public void fullTest(){
+        assertEquals(J19.full(), LJ19);
+        assertEquals(J20.full(), LJ20);
+        assertEquals(J21.full(), LJ21);
+        assertEquals(J10.full(), LVide);
+    }
+
+    @Test
+    public void carreTest(){
+        assertEquals(J22.carre(), 1);
+        assertEquals(J23.carre(), 3);
+        assertEquals(J24.carre(), 9);
+        assertEquals(J21.carre(), 0);
+    }
+
+    @Test
+    public void quinteFlushTest(){
+        assertEquals(J25.quinteFlush(), 8);
+        assertEquals(J26.quinteFlush(), 10);
+        assertEquals(J27.quinteFlush(), 13);
+        assertEquals(J16.quinteFlush(), 0);
+    }
+
+    @Test
+    public void niemePhc() {
     }
 }
-

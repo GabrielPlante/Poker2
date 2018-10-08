@@ -1,7 +1,9 @@
-package poker2;
+package test;
 
 //import static org.assertj.core.api.Assertions.*;
 
+
+import poker2.Carte;
 
 import java.util.ArrayList;
         import java.util.List;

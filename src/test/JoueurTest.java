@@ -259,5 +259,8 @@ public class JoueurTest {
 
     @Test
     public void niemePhc() {
+        assertEquals(J7.niemePhc(1, LJ7), 11);
+        assertEquals(J8.niemePhc(1, LJ8), 12);
+        assertEquals(J9.niemePhc(1, LJ9), 8);
     }
 }

@@ -1,6 +1,5 @@
-package Poker2;
+package poker2;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class ValeurMain {

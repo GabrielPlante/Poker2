@@ -1,4 +1,4 @@
-package Poker2;
+package poker2;
 
 import static java.lang.Math.max;
 

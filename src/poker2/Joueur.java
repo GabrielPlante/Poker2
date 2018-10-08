@@ -1,4 +1,4 @@
-package Poker2;
+package poker2;
 import java.util.*;
 
 public class Joueur {

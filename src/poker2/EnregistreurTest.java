@@ -1,16 +1,10 @@
-package Poker2;
+package poker2;
 
-import org.junit.Test;
 //import static org.assertj.core.api.Assertions.*;
 
 
-import java.io.InputStream;
-import java.io.ByteArrayInputStream;
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import static org.junit.Assert.*;
+        import java.util.List;
 
 public class EnregistreurTest {
     private List<Carte> creerPaquet(List<Integer> liste_nbr, List<String> liste_col){

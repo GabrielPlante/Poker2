@@ -139,4 +139,10 @@ public class Joueur {
         Collections.sort(liste_temp);//On trie la liste
         return liste_temp.get(liste_temp.size()-n);
     }
+    public void checkDoublons(Joueur autreJoueur){
+        for (Carte x:main)
+            for (Carte y:autreJoueur.getMain())
+                if (x.equals(y))
+                    throw new RuntimeException("Des cartes sont en doubles !");
+    }
 }

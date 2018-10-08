@@ -9,6 +9,7 @@ public class pokerMain {
             Joueur joueur1 = new Joueur(new Enregistreur().getPaquet());//On crée les 2 joueurs avec les valeurs qu'on a
             System.out.print("Main 2 : ");
             Joueur joueur2 = new Joueur(new Enregistreur().getPaquet());
+            joueur1.checkDoublons(joueur2);
 
             //On montre qui a gagné
             ValeurMain VMJ1 = new ValeurMain(joueur1);

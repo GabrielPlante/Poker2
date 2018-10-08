@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -173,6 +174,24 @@ public class JoueurTest {
     private ArrayList<String> J27FamilleCarte = new ArrayList<>(Arrays.asList("Ca", "Ca", "Ca", "Ca", "Ca"));
     private Joueur J27 = creerJoueur(J27ValeurCarte, J27FamilleCarte);
 
+    // --------------------------------------------------------------------------------------------------------------
+    //Array pour les méthodes double paire, couleur et full ---------------------------------------------------------
+    // --------------------------------------------------------------------------------------------------------------
+
+    private ArrayList<Integer> LVide = new ArrayList<>(Collections.emptyList());
+
+    private ArrayList<Integer> LJ7 = new ArrayList<>(Arrays.asList(6, 5));
+    private ArrayList<Integer> LJ8 = new ArrayList<>(Arrays.asList(10, 8));
+    private ArrayList<Integer> LJ9 = new ArrayList<>(Arrays.asList(12, 10));
+
+    private ArrayList<Integer> LJ16 = new ArrayList<>(Arrays.asList(7, 6, 4, 2, 1));
+    private ArrayList<Integer> LJ17 = new ArrayList<>(Arrays.asList(9, 6, 4, 3, 1));
+    private ArrayList<Integer> LJ18 = new ArrayList<>(Arrays.asList(10, 8, 5, 4, 2));
+
+    private ArrayList<Integer> LJ19 = new ArrayList<>(Arrays.asList(3, 13));
+    private ArrayList<Integer> LJ20 = new ArrayList<>(Arrays.asList(6, 5));
+    private ArrayList<Integer> LJ21 = new ArrayList<>(Arrays.asList(11, 1));
+
     @Test
     public void paireTest() {
         assertEquals(J4.paire(), 3);
@@ -183,6 +202,10 @@ public class JoueurTest {
 
     @Test
     public void doublePaireTest() {
+        assertEquals(J7.doublePaire(), LJ7);
+        assertEquals(J8.doublePaire(), LJ8);
+        assertEquals(J9.doublePaire(), LJ9);
+        assertEquals(J4.doublePaire(), LVide);
     }
 
     @Test
@@ -204,11 +227,20 @@ public class JoueurTest {
 
     @Test
     public void couleurTest(){
+        assertEquals(J16.couleur(), LJ16);
+        assertEquals(J17.couleur(), LJ17);
+        assertEquals(J18.couleur(), LJ18);
+        assertEquals(J15.couleur(), LVide);
     }
 
     @Test
     public void fullTest(){
+        assertEquals(J19.full(), LJ19);
+        assertEquals(J20.full(), LJ20);
+        assertEquals(J21.full(), LJ21);
+        assertEquals(J10.full(), LVide);
     }
+
     @Test
     public void carreTest(){
         assertEquals(J22.carre(), 1);

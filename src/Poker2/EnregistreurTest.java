@@ -19,6 +19,7 @@ public class EnregistreurTest {
             paquet.add(new Carte(liste_nbr.get(i), liste_col.get(i)));
         return paquet;
     }
+    /*
     private List<Carte> runEnregistreur(String data){
         Enregistreur enr;
         // MOCK System.in
@@ -160,4 +161,5 @@ public class EnregistreurTest {
         assertEquals(paquet.checkDoublons(new Carte(5, "Pi")), true);
         assertEquals(paquet.checkDoublons(new Carte(25, "Pi")), false);
     }
+    */
 }

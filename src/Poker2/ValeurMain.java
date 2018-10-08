@@ -24,8 +24,7 @@ public class ValeurMain {
             valeur.add(joueur.full().get(1));
         }else if (joueur.couleur().size() > 0) {
             valeur.add(6);
-            for (Integer n: joueur.couleur())
-                valeur.add(n);
+            valeur.addAll(joueur.couleur());
         }else if (joueur.suite() !=0){
             x.add(joueur.suite());
             valeur.add(5);

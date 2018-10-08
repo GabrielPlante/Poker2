@@ -58,10 +58,13 @@ public class Joueur {
     }
     public int suite() {
         int min = 14;
+        int max = 0;//Pour tester la suite 1 2 3 4 5
         int carteAdjacente = 0;
         for (Carte y : main) {
             if (y.getNombre() < min) min = y.getNombre();
+            if (y.getNombre() > max) max = y.getNombre();
         }
+        if (max == 13 && min != 9) min = 0;//Si il y a un as qui n'est pas le bout de la suite 10 V D R A
         for (int i = min + 1; i <= min + 4; i++) {
             for (Carte y : main) {
                 if (y.getNombre() == i) {

@@ -15,13 +15,13 @@ public class pokerMain {
             // valeur main récupère le tableau de 5 carte de joueur et la combinaison associée (reconnue préalablement par le joueur), et s'attribut un tableau indiquant la force de la main
             ValeurMain VMJ1 = new ValeurMain(joueur1);
             ValeurMain VMJ2 = new ValeurMain(joueur2);
-            String gagnant = "La main ";
+            String gagnantTexte = "La main ";
             if (VMJ1.meilleureQue(VMJ2) == 1)
-                gagnant += ("1 gagne avec " + VMJ1.texteCombinaison());
+                gagnantTexte += ("1 gagne avec " + VMJ1.texteCombinaison());
             else if (VMJ1.meilleureQue(VMJ2) == -1)
-                gagnant += ("2 gagne avec " + VMJ2.texteCombinaison());
-            else gagnant = "Egalite";
-            System.out.println(gagnant);
+                gagnantTexte += ("2 gagne avec " + VMJ2.texteCombinaison());
+            else gagnantTexte = "Egalite";
+            System.out.println(gagnantTexte);
         }
         catch (RuntimeException e){
             System.out.println(e.getMessage());

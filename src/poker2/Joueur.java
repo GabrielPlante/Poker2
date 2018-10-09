@@ -146,6 +146,6 @@ public class Joueur {
         for (Carte x:main)
             for (Carte y:autreJoueur.getMain())
                 if (x.equals(y))
-                    throw new RuntimeException("Des cartes sont en double !");
+                    throw new RuntimeException("Une carte au moins a été utilisée plusieurs fois");
     }
 }

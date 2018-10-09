@@ -72,7 +72,7 @@ public class ValeurMain {
     public String texteCombinaison(){
         switch (valeur.get(0))
         {
-            case 1: return "hauteur " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet();
+            case 1: return "carte la plus élevée: " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet();
             case 2: return "paire de " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet();
             case 3: return "double paire de " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet() + " et de " + new Carte (getValeurMain().get(2), "").valeurToIndiceComplet();
             case 4: return "brelan de " + new Carte (getValeurMain().get(1), "").valeurToIndiceComplet();

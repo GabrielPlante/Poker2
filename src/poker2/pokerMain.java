@@ -19,7 +19,7 @@ public class pokerMain {
                 gagnant += ("1 gagne avec " + VMJ1.texteCombinaison());
             else if (VMJ1.meilleureQue(VMJ2) == -1)
                 gagnant += ("2 gagne avec " + VMJ2.texteCombinaison());
-            else gagnant = "Egalité";
+            else gagnant = "Egalite";
             System.out.println(gagnant);
         }
         catch (RuntimeException e){

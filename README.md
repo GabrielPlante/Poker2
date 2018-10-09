@@ -1,4 +1,4 @@
-# Poker2
+﻿# Poker2
 Remake du projet Poker (version propre)
 Rentrer deux mains de poker, puis le logiciel affiche laquelle est la plus forte.
 Une carte valide se compose d'un nombre entre 2 et 10 ou de V, D, R, A pour Valet Dame Roi As respectivement,
